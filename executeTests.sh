@@ -5,9 +5,10 @@ function runTest {
     lli tests/$1.ll &> tests/$1Execution.log
 }
 
-# Run all the C file tests.
-for file in "tests"/*.c; do
-    file=$(basename $file .c)
+# Run all the python  file tests.
+for file in "tests"/*.py; do
+    file=$(basename $file .py)
     echo "Testing: $file"
     runTest $file
+    # todo add check with acc. python interpreter. 
 done
