@@ -9,15 +9,79 @@
 
 
 # STARTING RULES
-# TODO; Implement
+# ==============
+
+file: [statements] ENDMARKER 
 
 # GENERAL STATEMENTS
-# TODO; Implement
+# ==================
+
+statements: statement+ 
+
+statement:
+    | compound_stmt 
+    | simple_stmts 
+
+simple_stmts:
+    | simple_stmt NEWLINE
+
+# SIMPLE STATEMENTS
+# =================
+
+simple_stmt:
+    | assignment
+    | if_stmt
+    | while_stmt
+
+assignment:
+    | NAME '=' expression
+
+if_stmt:
+    | 'if' expression ':' block [elif_stmt] [else_block]
+
+elif_stmt:
+    | 'elif' expression ':' block [elif_stmt]
+
+else_block:
+    | 'else' ':' block
+
+while_stmt:
+    | 'while' expression ':' block
+
+# COMPOUND STATEMENTS
+# ===================
+
+block:
+    | NEWLINE INDENT statements DEDENT 
+    | simple_stmts
+
+# EXPRESSIONS
+# -----------
+
+expression:
+    | disjunction
+
+disjunction:
+    | conjunction ('or' conjunction)*
+
+conjunction:
+    | comparison ('and' comparison)*
+
+comparison:
+    | arith_expr (comp_op arith_expr)*
+
+comp_op: '<' | '>' | '==' | '>=' | '<=' | '!='
+
+arith_expr:
+    | term (('+' | '-') term)*
+
+term:
+    | factor (('*' | '/' | '%') factor)*
+
+factor:
+    | NAME
+    | NUMBER
+    | '(' expression ')'
 
 
-# If Statements
-# TODO; Implement
 
-
-
-# TODO add others;
