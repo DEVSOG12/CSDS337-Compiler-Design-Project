@@ -17,7 +17,7 @@ Similar to assignment 1, we will be generating dummy python code for certain fun
 
 ## Current Progress
 
-So far, we have arrived at the Python general grammar. After reading through it, we have created a subsection of the grammar that only relates to the functionalities that we plan on implementing in our compiler. Our next step is to start implementing our grammar. We referenced the (Official Python)[https://docs.python.org/3/reference/grammar.html] site to design our new grammar. We have written the lexer and currently working on the parser.
+So far, we have arrived at the Python general grammar. After reading through it, we have created a subsection of the grammar that only relates to the functionalities that we plan on implementing in our compiler. Our next step is to start implementing our grammar. We referenced the [Official Python](https://docs.python.org/3/reference/grammar.html) site to design our new grammar. We have written the lexer and are currently working on the parser.
 
 
 
