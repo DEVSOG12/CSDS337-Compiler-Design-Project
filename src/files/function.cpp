@@ -50,6 +50,8 @@ VarType* ASTFunction::GetVariableType(const std::string& name)
     {
         if (ret = ast.scopeTable.GetVariableType(name), !ret) // Continue only if AST scope table doesn't have value.
         {
+
+
             throw std::runtime_error("ERROR: In function " + this->name + ", cannot resolve variable or function " + name + "!");
         }
         else return ret;
@@ -60,16 +62,18 @@ VarType* ASTFunction::GetVariableType(const std::string& name)
 llvm::Value* ASTFunction::GetVariableValue(const std::string& name)
 {
     llvm::Value* ret;
-    if (ret = scopeTable.GetVariableValue(name), !ret) // Continue only if function scope table doesn't have value.
+    if (ret = scopeTable.GetVariableValue(name), !ret)
     {
-        if (ret = ast.scopeTable.GetVariableValue(name), !ret) // Continue only if AST scope table doesn't have value.
+        if (ret = ast.scopeTable.GetVariableValue(name), !ret)
         {
-            throw std::runtime_error("ERROR: In function " + this->name + ", cannot resolve variable or function " + name + "!");
+            // Variable not found, handle gracefully
+            return nullptr;
         }
         else return ret;
     }
     else return ret;
 }
+
 
 void ASTFunction::SetVariableValue(const std::string& name, llvm::Value* value)
 {
@@ -77,6 +81,7 @@ void ASTFunction::SetVariableValue(const std::string& name, llvm::Value* value)
     {
         if (!ast.scopeTable.SetVariableValue(name, value)) // Continue only if AST scope table doesn't have value.
         {
+            
             throw std::runtime_error("ERROR: In function " + this->name + ", cannot resolve variable or function " + name + "!");
         }
     }

@@ -1,0 +1,96 @@
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build
+[  2%] [BISON][Parser] Building parser with bison 3.8.2
+src/files/frontend/parser.y: warning: 40 shift/reduce conflicts [-Wconflicts-sr]
+src/files/frontend/parser.y: note: rerun with option '-Wcounterexamples' to generate conflict counterexamples
+[  8%] Building CXX object CMakeFiles/LLVM-Lab.dir/lex.yy.cc.o
+[  8%] Building CXX object CMakeFiles/LLVM-Lab.dir/parser.tab.cc.o
+[ 11%] Linking CXX executable /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab
+ld: Undefined symbols:
+  yypstate_new(), referenced from:
+      ___cxx_global_var_init in lex.yy.cc.o
+  yypush_parse(yypstate*, int, YYSTYPE const*, YYLTYPE*), referenced from:
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      ...
+  yypstate_delete(yypstate*), referenced from:
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      yylex() in lex.yy.cc.o
+      ...
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[2]: *** [/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab] Error 1
+make[1]: *** [CMakeFiles/LLVM-Lab.dir/all] Error 2
+make: *** [all] Error 2
+Running -i tests/simple.py -fAsm -o tests/simple.ll
+./run.sh: line 5: bin/LLVM-Lab: No such file or directory

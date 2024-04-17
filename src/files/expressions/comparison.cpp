@@ -7,52 +7,59 @@ std::unique_ptr<VarType> ASTExpressionComparison::ReturnType(ASTFunction& func)
 
 bool ASTExpressionComparison::IsLValue(ASTFunction& func)
 {
-    return false; // If we are adding values together, they must be usable R-Values. Adding these together just results in an R-Value.
+    return false; // Comparison expressions always result in R-Values.
 }
 
 llvm::Value* ASTExpressionComparison::Compile(llvm::IRBuilder<>& builder, ASTFunction& func)
 {
     VarTypeSimple* returnType;
     if (!ASTExpression::CoerceTypes(func, a1, a2, returnType)) // This will force our arguments to be the same type and outputs which one it is.
-            throw std::runtime_error("ERROR: Can not coerce types in comparison expression! Are they all booleans, ints, and floats?");
+        throw std::runtime_error("ERROR: Can not coerce types in comparison expression! Are they all booleans, ints, and floats?");
 
     // Get values. Operations only work on R-Values.
     auto a1Val = a1->CompileRValue(builder, func);
     auto a2Val = a2->CompileRValue(builder, func);
 
-    // Int type, do int comparisons.
     if (returnType->Equals(&VarTypeSimple::IntType))
     {
         switch (type)
         {
-            case Equal: return builder.CreateCmp(llvm::CmpInst::ICMP_EQ, a1Val, a2Val);
-            case NotEqual: return builder.CreateCmp(llvm::CmpInst::ICMP_NE, a1Val, a2Val);
-            // Hm, some of these cases in these functions appear to be missing...
+            case Equal: return builder.CreateICmpEQ(a1Val, a2Val);
+            case NotEqual: return builder.CreateICmpNE(a1Val, a2Val);
+            case LessThan: return builder.CreateICmpSLT(a1Val, a2Val);
+            case LessThanOrEqual: return builder.CreateICmpSLE(a1Val, a2Val);
+            case GreaterThan: return builder.CreateICmpSGT(a1Val, a2Val);
+            case GreaterThanOrEqual: return builder.CreateICmpSGE(a1Val, a2Val);
         }
     }
-
-    // Float type, do float comparisons.
-    if (returnType->Equals(&VarTypeSimple::FloatType))
+    else if (returnType->Equals(&VarTypeSimple::FloatType))
     {
         switch (type)
         {
-            case Equal: return builder.CreateCmp(llvm::CmpInst::FCMP_OEQ, a1Val, a2Val); // Use ordered operations to not allow NANS.
-            case NotEqual: return builder.CreateCmp(llvm::CmpInst::FCMP_ONE, a1Val, a2Val);
+            case Equal: return builder.CreateFCmpOEQ(a1Val, a2Val); // Use ordered operations to not allow NANS.
+            case NotEqual: return builder.CreateFCmpONE(a1Val, a2Val);
+            case LessThan: return builder.CreateFCmpOLT(a1Val, a2Val);
+            case LessThanOrEqual: return builder.CreateFCmpOLE(a1Val, a2Val);
+            case GreaterThan: return builder.CreateFCmpOGT(a1Val, a2Val);
+            case GreaterThanOrEqual: return builder.CreateFCmpOGE(a1Val, a2Val);
         }
     }
 
     // How did we get here?
     throw std::runtime_error("ERROR: Did not return value from comparison. Unsuccessful coercion of values or invalid comparison type!");
-    
 }
 
 std::string ASTExpressionComparison::ToString(const std::string& prefix)
 {
-    std::string op = "";
+    std::string op;
     switch (type)
     {
-        case Equal: op = "="; break;
+        case Equal: op = "=="; break;
         case NotEqual: op = "!="; break;
+        case LessThan: op = "<"; break;
+        case LessThanOrEqual: op = "<="; break;
+        case GreaterThan: op = ">"; break;
+        case GreaterThanOrEqual: op = ">="; break;
     }
     std::string ret = "(" + op + ")\n";
     ret += prefix + "├──" + a1->ToString(prefix + "│  ");
