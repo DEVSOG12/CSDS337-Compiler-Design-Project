@@ -1,5 +1,11 @@
 # CSDS 337 - Project
 
+## Authors
+- [Sahil Buddharaju](mailto:svb24@case.edu)
+- [Oreofe Solarin](mailto:ons8@case.edu)
+- [Oneal Egwuatu](mailto:one6@case.edu)
+ 
+
 
 ## References
 
