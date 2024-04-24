@@ -35,8 +35,8 @@
    especially those whose name start with YY_ or yy_.  They are
    private implementation details that can be changed or removed.  */
 
-#ifndef YY_YY_USERS_DEVSOG12_PROJECTS_CSDS337_COMPILER_DESIGN_PROJECT_BUILD_PARSER_TAB_HH_INCLUDED
-# define YY_YY_USERS_DEVSOG12_PROJECTS_CSDS337_COMPILER_DESIGN_PROJECT_BUILD_PARSER_TAB_HH_INCLUDED
+#ifndef YY_YY_MNT_C_USERS_KILLC_ONEDRIVE_DESKTOP_PG4_1_PG4_BUILD_PARSER_TAB_HH_INCLUDED
+# define YY_YY_MNT_C_USERS_KILLC_ONEDRIVE_DESKTOP_PG4_1_PG4_BUILD_PARSER_TAB_HH_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -45,38 +45,40 @@
 extern int yydebug;
 #endif
 /* "%code requires" blocks.  */
-#line 1 "src/files/frontend/parser.y"
+#line 1 "src/frontend/parser.y"
 
   #include <stdio.h>
-  #include <stdlib.h>
-  #include <vector>
-  #include <string>
-  #include <cstring>
-  #include <variant>
-  #include <iostream>
-  #include "ast.h"
-  #include "expressions/call.h"
-  #include "expressions/int.h"
-  #include "expressions/float.h"
-  #include "expressions/string.h"
-  #include "expressions/variable.h"
-  #include "expressions/addition.h"
-  #include "expressions/subtraction.h"
-  #include "expressions/multiplication.h"
-  #include "expressions/division.h"
-  #include "expressions/assignment.h"
-  #include "expressions/comparison.h"
-  #include "expressions/and.h"
-  #include "expressions/or.h"
-  #include "statements/block.h"
-  #include "statements/for.h"
-  #include "statements/while.h"
-  #include "statements/if.h"
-  #include "statements/return.h"
-  #include "types/simple.h"
-  extern FILE *yyin;
+#include <stdlib.h>
+#include <vector>
+#include <string>
+#include <cstring>
+#include <variant>
+#include <iostream>
+  //all of these includes are done as relative paths starting from the build/ directory, since that's where CMake places parser.tab.cc
+#include "../src/ast.h"
+#include "../src/expressions/call.h"
+#include "../src/expressions/int.h"
+#include "../src/expressions/float.h"
+#include "../src/expressions/string.h"
+#include "../src/expressions/variable.h"
+#include "../src/expressions/addition.h"
+#include "../src/expressions/subtraction.h"
+#include "../src/expressions/multiplication.h"
+#include "../src/expressions/division.h"
+#include "../src/expressions/assignment.h"
+#include "../src/expressions/comparison.h"
+#include "../src/expressions/and.h"
+#include "../src/expressions/or.h"
+#include "../src/statements/block.h"
+#include "../src/statements/while.h"
+#include "../src/statements/for.h"
+#include "../src/statements/if.h"
+#include "../src/statements/return.h"
+#include "../src/types/simple.h"
+extern FILE *yyin;
+ 
 
-#line 80 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.hh"
+#line 82 "/mnt/c/Users/killc/OneDrive/Desktop/PG4-1/PG4/build/parser.tab.hh"
 
 /* Token kinds.  */
 #ifndef YYTOKENTYPE
@@ -87,40 +89,45 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    IDENTIFIER = 258,              /* IDENTIFIER  */
-    INTEGER = 259,                 /* INTEGER  */
-    BOOLEAN = 260,                 /* BOOLEAN  */
-    FLOAT = 261,                   /* FLOAT  */
-    EQUALS = 262,                  /* EQUALS  */
-    PLUS = 263,                    /* PLUS  */
-    MINUS = 264,                   /* MINUS  */
-    TIMES = 265,                   /* TIMES  */
-    DIVIDEDBY = 266,               /* DIVIDEDBY  */
-    EQ = 267,                      /* EQ  */
-    NEQ = 268,                     /* NEQ  */
-    GT = 269,                      /* GT  */
-    GTE = 270,                     /* GTE  */
-    LT = 271,                      /* LT  */
-    LTE = 272,                     /* LTE  */
-    RETURN = 273,                  /* RETURN  */
-    INDENT = 274,                  /* INDENT  */
-    DEDENT = 275,                  /* DEDENT  */
-    NEWLINE = 276,                 /* NEWLINE  */
-    IF = 277,                      /* IF  */
-    COLON = 278,                   /* COLON  */
-    AND = 279,                     /* AND  */
-    BREAK = 280,                   /* BREAK  */
-    DEF = 281,                     /* DEF  */
-    ELIF = 282,                    /* ELIF  */
-    ELSE = 283,                    /* ELSE  */
-    FOR = 284,                     /* FOR  */
-    NOT = 285,                     /* NOT  */
-    OR = 286,                      /* OR  */
-    WHILE = 287,                   /* WHILE  */
-    SEMICOLON = 288,               /* SEMICOLON  */
-    LPAREN = 289,                  /* LPAREN  */
-    RPAREN = 290,                  /* RPAREN  */
-    COMMA = 291                    /* COMMA  */
+    FOR = 258,                     /* FOR  */
+    ID = 259,                      /* ID  */
+    BOOL_TYPE = 260,               /* BOOL_TYPE  */
+    INT_TYPE = 261,                /* INT_TYPE  */
+    FLOAT_TYPE = 262,              /* FLOAT_TYPE  */
+    STRING_TYPE = 263,             /* STRING_TYPE  */
+    VOID_TYPE = 264,               /* VOID_TYPE  */
+    SEMICOLON = 265,               /* SEMICOLON  */
+    LPAREN = 266,                  /* LPAREN  */
+    RPAREN = 267,                  /* RPAREN  */
+    COMMA = 268,                   /* COMMA  */
+    LBRACE = 269,                  /* LBRACE  */
+    RBRACE = 270,                  /* RBRACE  */
+    IF = 271,                      /* IF  */
+    ELSE = 272,                    /* ELSE  */
+    WHILE = 273,                   /* WHILE  */
+    BREAK = 274,                   /* BREAK  */
+    RETURN = 275,                  /* RETURN  */
+    EQUALS_SIGN = 276,             /* EQUALS_SIGN  */
+    LOGICAL_OR = 277,              /* LOGICAL_OR  */
+    LOGICAL_AND = 278,             /* LOGICAL_AND  */
+    LOGICAL_NOT = 279,             /* LOGICAL_NOT  */
+    RELOP_GT = 280,                /* RELOP_GT  */
+    RELOP_LT = 281,                /* RELOP_LT  */
+    RELOP_GE = 282,                /* RELOP_GE  */
+    RELOP_LE = 283,                /* RELOP_LE  */
+    RELOP_EQ = 284,                /* RELOP_EQ  */
+    RELOP_NE = 285,                /* RELOP_NE  */
+    ARITH_PLUS = 286,              /* ARITH_PLUS  */
+    ARITH_MINUS = 287,             /* ARITH_MINUS  */
+    ARITH_MULT = 288,              /* ARITH_MULT  */
+    ARITH_DIV = 289,               /* ARITH_DIV  */
+    ARITH_MOD = 290,               /* ARITH_MOD  */
+    VARIADIC = 291,                /* VARIADIC  */
+    BOOL_LITERAL = 292,            /* BOOL_LITERAL  */
+    INT_LITERAL = 293,             /* INT_LITERAL  */
+    FLOAT_LITERAL = 294,           /* FLOAT_LITERAL  */
+    STRING_LITERAL = 295,          /* STRING_LITERAL  */
+    EOL = 296                      /* EOL  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -129,13 +136,23 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 54 "src/files/frontend/parser.y"
+#line 50 "src/frontend/parser.y"
 
-  float value;
-  std::string* str;
-  int token;
+  bool boolval;
+  int intval;
+  double fltval;
+  char *strval;
+  struct node *nodeval;
+  ASTFunctionParameter *var;
+  std::vector<ASTFunctionParameter *> *vars;
+  ASTStatement *stmt;
+  std::vector<ASTStatement *> *stmtVec;
+  ASTExpression *exp;
+  std::vector<ASTExpression *> *exprVec;
+  VarType *type;
+  ASTExpressionComparisonType rel;
 
-#line 139 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.hh"
+#line 156 "/mnt/c/Users/killc/OneDrive/Desktop/PG4-1/PG4/build/parser.tab.hh"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -143,25 +160,11 @@ typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
-/* Location type.  */
-#if ! defined YYLTYPE && ! defined YYLTYPE_IS_DECLARED
-typedef struct YYLTYPE YYLTYPE;
-struct YYLTYPE
-{
-  int first_line;
-  int first_column;
-  int last_line;
-  int last_column;
-};
-# define YYLTYPE_IS_DECLARED 1
-# define YYLTYPE_IS_TRIVIAL 1
-#endif
-
 
 extern YYSTYPE yylval;
-extern YYLTYPE yylloc;
+
 
 int yyparse (void);
 
 
-#endif /* !YY_YY_USERS_DEVSOG12_PROJECTS_CSDS337_COMPILER_DESIGN_PROJECT_BUILD_PARSER_TAB_HH_INCLUDED  */
+#endif /* !YY_YY_MNT_C_USERS_KILLC_ONEDRIVE_DESKTOP_PG4_1_PG4_BUILD_PARSER_TAB_HH_INCLUDED  */

@@ -1,3 +1,3 @@
-/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/CMakeFiles/LLVM-Lab.dir
-/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/CMakeFiles/edit_cache.dir
-/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/killc/OneDrive/Desktop/PG4-1/PG4/build/CMakeFiles/LLVM-Lab.dir
+/mnt/c/Users/killc/OneDrive/Desktop/PG4-1/PG4/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/killc/OneDrive/Desktop/PG4-1/PG4/build/CMakeFiles/rebuild_cache.dir
