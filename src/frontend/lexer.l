@@ -37,7 +37,6 @@ static std::stringstream ss;
 ")"                         { return RPAREN; }
 ":"                         { return COLON; }
 ","                         { return COMMA; }
-"="                         { return ASSIGNMENT; }
 "\n"                        { return NEWLINE; }
 "\\n"                       { return NEWLINE; }
 "\\t"                       { return TAB; }
@@ -50,9 +49,9 @@ static std::stringstream ss;
 <strlit>\"                  { yylval.strval = strdup((char *) ss.str().c_str()); BEGIN 0; return STRING_LITERAL; }
 <strlit>\\.                 { printf("Invalid escape character '%s'\n", yytext); }
 <strlit>\n                  { printf("Found newline in string\n"); }
-[_a-zA-Z][_a-zA-Z0-9]*     { yylval.strval = strdup(yytext); return NAME; }
-[0-9]+                      { yylval.intval = atoi(yytext); return NUMBER; }
-[0-9]+"."[0-9]+             { yylval.fltval = atof(yytext); return NUMBER; }
+[_a-zA-Z][_a-zA-Z0-9]*     { yylval.strval = strdup(yytext); return ID; }
+[0-9]+                      { yylval.intval = atoi(yytext); return INT_LITERAL; }
+[0-9]+"."[0-9]+             { yylval.fltval = atof(yytext); return FLOAT_LITERAL; }
 .                           { printf("Unrecognized character %c\n", *yytext); }
 
 %%

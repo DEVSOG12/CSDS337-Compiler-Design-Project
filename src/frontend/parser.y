@@ -63,25 +63,31 @@ extern FILE *yyin;
   ASTExpressionComparisonType rel;
 }
 
-%token NEWLINE INDENT DEDENT COLON PRINT FOR ID BOOL_TYPE INT_TYPE FLOAT_TYPE STRING_TYPE VOID_TYPE SEMICOLON LPAREN RPAREN COMMA LBRACE RBRACE IF ELSE WHILE BREAK RETURN EQUALS_SIGN LOGICAL_OR LOGICAL_AND LOGICAL_NOT RELOP_GT RELOP_LT RELOP_GE RELOP_LE RELOP_EQ RELOP_NE ARITH_PLUS ARITH_MINUS ARITH_MULT ARITH_DIV ARITH_MOD VARIADIC BOOL_LITERAL INT_LITERAL FLOAT_LITERAL STRING_LITERAL EOL
+%token NAME NEWLINE INDENT DEDENT COLON PRINT FOR ID BOOL_TYPE INT_TYPE FLOAT_TYPE STRING_TYPE VOID_TYPE SEMICOLON LPAREN RPAREN COMMA LBRACE RBRACE IF ELIF ASSIGNMENT TAB ELSE WHILE BREAK RETURN EQUALS_SIGN LOGICAL_OR LOGICAL_AND LOGICAL_NOT RELOP_GT RELOP_LT RELOP_GE RELOP_LE RELOP_EQ RELOP_NE ARITH_PLUS ARITH_MINUS ARITH_MULT ARITH_DIV ARITH_MOD VARIADIC BOOL_LITERAL INT_LITERAL FLOAT_LITERAL STRING_LITERAL EOL
 
 %type <boolval> BOOL_LITERAL
 %type <strval> ID STRING_LITERAL
 %type <intval> int_lit INT_LITERAL
 %type <fltval> flt_lit FLOAT_LITERAL
-%type <stmt> stmt exprStmt selStmt iterStmt assignStmt
-%type <stmtVec> stmts
+%type <stmt> stmt exprStmt selStmt iterStmt 
+%type <stmtVec> stmts program
 %type <exp> expr orExpr andExpr unaryRelExpr relExpr term factor primary constant
 %type <rel> relop
 
 %expect 1 // Shift/reduce conflict when resolving the if/else production; okay
 
-%%
- //AST does not support global variables, so the only declarations are functions
-program: | decList ;
-decList: decList dec | dec ;
-dec: stmts;
 
+%%
+
+program: stmts { $$ = $1; };
+
+stmts: stmts stmt {
+  //Here, we just place the statements into a vector. They'll be added to the AST in a parent's code action.
+  $$ = $1;
+  $$->push_back($2);
+} | {
+  $$ = new std::vector<ASTStatement *>();
+};
 stmt: exprStmt {$$ = $1;} | NEWLINE INDENT stmts NEWLINE DEDENT {
   //"stmts" is a vector of plain pointers to statements. We convert it to a statement block as follows:
   auto statements = new ASTStatementBlock();
@@ -89,26 +95,16 @@ stmt: exprStmt {$$ = $1;} | NEWLINE INDENT stmts NEWLINE DEDENT {
     statements->statements.push_back(std::unique_ptr<ASTStatement>(s));
   }
   $$ = statements;
- }| selStmt {$$ = $1;} | iterStmt {$$ = $1;} | assignStmt {$$ = $1};
+ } | selStmt {$$ = $1;} | iterStmt {$$ = $1;};
 
 
 
-assignStmt: expr EQUALS_SIGN orExpr NEWLINE {
-  $$ = new ASTFunctionParameter(std::unique_ptr<VarType>($1), $1);
-  $$ = new ASTExpressionAssignment(std::unique_ptr<ASTExpression>($1), std::unique_ptr<ASTExpression>($3));
-}
 exprStmt: expr NEWLINE {
   $$ = $1; //implicit cast expr -> stmt
  } | NEWLINE {
   $$ = new ASTStatementBlock(); //empty statement = empty block
  };
-stmts: stmts NEWLINE stmt {
-  //Here, we just place the statements into a vector. They'll be added to the AST in a parent's code action.
-  $$ = $1;
-  $$->push_back($3);
- }| {
-  $$ = new std::vector<ASTStatement *>();
- };
+
 selStmt: IF expr COLON stmt {
   $$ = new ASTStatementIf(std::unique_ptr<ASTExpression>($2), std::unique_ptr<ASTStatement>($4), std::unique_ptr<ASTStatement>(nullptr));
  } | IF expr COLON stmt ELSE COLON stmt {
@@ -117,8 +113,13 @@ selStmt: IF expr COLON stmt {
 
 iterStmt: WHILE expr COLON stmt {
   $$ = new ASTStatementWhile(std::unique_ptr<ASTExpression>($2), std::unique_ptr<ASTStatement>($4));
- };
-expr: orExpr { $$ = $1;};
+};
+
+
+
+expr: orExpr { $$ = $1;} | expr EQUALS_SIGN orExpr {
+  $$ = new ASTExpressionAssignment(std::unique_ptr<ASTExpression>($1), std::unique_ptr<ASTExpression>($3));
+};
 orExpr: andExpr {$$ = $1;} | orExpr LOGICAL_OR andExpr {
   $$ = new ASTExpressionOr(std::unique_ptr<ASTExpression>($1), std::unique_ptr<ASTExpression>($3));
  };
