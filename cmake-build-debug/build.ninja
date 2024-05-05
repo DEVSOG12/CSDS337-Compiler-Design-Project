@@ -56,8 +56,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/ast.cpp.o: CXX_COMPILER__LLVM-Lab_unscan
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/demo.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/demo.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -66,8 +64,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/demo.cpp.o: CXX_COMPILER__LLVM-Lab_unsca
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expression.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expression.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -76,8 +72,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expression.cpp.o: CXX_COMPILER__LLVM-Lab
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/addition.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/addition.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -86,8 +80,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/addition.cpp.o: CXX_COMPILER
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/and.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/and.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -96,8 +88,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/and.cpp.o: CXX_COMPILER__LLV
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/assignment.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/assignment.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -106,8 +96,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/assignment.cpp.o: CXX_COMPIL
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/bool.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/bool.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -116,8 +104,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/bool.cpp.o: CXX_COMPILER__LL
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/bool2Int.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/bool2Int.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -126,8 +112,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/bool2Int.cpp.o: CXX_COMPILER
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/call.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/call.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -136,8 +120,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/call.cpp.o: CXX_COMPILER__LL
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/comparison.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/comparison.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -146,8 +128,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/comparison.cpp.o: CXX_COMPIL
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/division.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/division.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -156,8 +136,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/division.cpp.o: CXX_COMPILER
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/float.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/float.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -166,8 +144,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/float.cpp.o: CXX_COMPILER__L
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/float2Int.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/float2Int.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -176,8 +152,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/float2Int.cpp.o: CXX_COMPILE
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/int.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/int.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -186,8 +160,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/int.cpp.o: CXX_COMPILER__LLV
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/int2Bool.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/int2Bool.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -196,8 +168,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/int2Bool.cpp.o: CXX_COMPILER
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/int2Float.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/int2Float.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -206,8 +176,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/int2Float.cpp.o: CXX_COMPILE
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/multiplication.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/multiplication.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -216,8 +184,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/multiplication.cpp.o: CXX_CO
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/negative.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/negative.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -226,8 +192,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/negative.cpp.o: CXX_COMPILER
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/or.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/or.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -236,8 +200,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/or.cpp.o: CXX_COMPILER__LLVM
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/string.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/string.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -246,8 +208,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/string.cpp.o: CXX_COMPILER__
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/sub.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/sub.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -256,8 +216,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/sub.cpp.o: CXX_COMPILER__LLV
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/expressions/variable.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/expressions/variable.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -266,28 +224,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/expressions/variable.cpp.o: CXX_COMPILER
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/expressions
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
-
-build CMakeFiles/LLVM-Lab.dir/src/files/frontend/parser-push.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/frontend/parser-push.cpp || cmake_object_order_depends_target_LLVM-Lab
-  DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
-  DEP_FILE = CMakeFiles/LLVM-Lab.dir/src/files/frontend/parser-push.cpp.o.d
-  FLAGS = -fno-rtti -std=c++11 -frtti -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
-  OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
-  OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/frontend
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
-
-build CMakeFiles/LLVM-Lab.dir/src/files/frontend/scanner-push.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/frontend/scanner-push.cpp || cmake_object_order_depends_target_LLVM-Lab
-  DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
-  DEP_FILE = CMakeFiles/LLVM-Lab.dir/src/files/frontend/scanner-push.cpp.o.d
-  FLAGS = -fno-rtti -std=c++11 -frtti -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
-  OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
-  OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/frontend
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/function.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/function.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -296,8 +232,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/function.cpp.o: CXX_COMPILER__LLVM-Lab_u
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/scopeTable.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/scopeTable.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -306,8 +240,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/scopeTable.cpp.o: CXX_COMPILER__LLVM-Lab
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/statements/block.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/statements/block.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -316,8 +248,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/statements/block.cpp.o: CXX_COMPILER__LL
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/statements
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/statements/for.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/statements/for.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -326,8 +256,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/statements/for.cpp.o: CXX_COMPILER__LLVM
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/statements
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/statements/if.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/statements/if.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -336,8 +264,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/statements/if.cpp.o: CXX_COMPILER__LLVM-
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/statements
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/statements/return.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/statements/return.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -346,8 +272,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/statements/return.cpp.o: CXX_COMPILER__L
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/statements
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/statements/while.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/statements/while.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -356,8 +280,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/statements/while.cpp.o: CXX_COMPILER__LL
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/statements
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/types/function.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/types/function.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -366,8 +288,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/types/function.cpp.o: CXX_COMPILER__LLVM
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/types
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/src/files/types/simple.cpp.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/types/simple.cpp || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -376,8 +296,6 @@ build CMakeFiles/LLVM-Lab.dir/src/files/types/simple.cpp.o: CXX_COMPILER__LLVM-L
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir/src/files/types
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/lex.yy.cc.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/lex.yy.cc | parser.tab.hh || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -386,8 +304,6 @@ build CMakeFiles/LLVM-Lab.dir/lex.yy.cc.o: CXX_COMPILER__LLVM-Lab_unscanned_Debu
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 build CMakeFiles/LLVM-Lab.dir/parser.tab.cc.o: CXX_COMPILER__LLVM-Lab_unscanned_Debug /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc || cmake_object_order_depends_target_LLVM-Lab
   DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
@@ -396,8 +312,6 @@ build CMakeFiles/LLVM-Lab.dir/parser.tab.cc.o: CXX_COMPILER__LLVM-Lab_unscanned_
   INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   OBJECT_FILE_DIR = CMakeFiles/LLVM-Lab.dir
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
 
 
 # =============================================================================
@@ -407,15 +321,14 @@ build CMakeFiles/LLVM-Lab.dir/parser.tab.cc.o: CXX_COMPILER__LLVM-Lab_unscanned_
 #############################################
 # Link the executable /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab
 
-build /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab: CXX_EXECUTABLE_LINKER__LLVM-Lab_Debug CMakeFiles/LLVM-Lab.dir/src/files/ast.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/demo.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expression.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/addition.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/and.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/assignment.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/bool.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/bool2Int.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/call.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/comparison.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/division.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/float.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/float2Int.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/int.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/int2Bool.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/int2Float.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/multiplication.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/negative.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/or.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/string.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/sub.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/variable.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/frontend/parser-push.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/frontend/scanner-push.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/function.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/scopeTable.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/statements/block.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/statements/for.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/statements/if.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/statements/return.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/statements/while.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/types/function.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/types/simple.cpp.o CMakeFiles/LLVM-Lab.dir/lex.yy.cc.o CMakeFiles/LLVM-Lab.dir/parser.tab.cc.o
+build /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab: CXX_EXECUTABLE_LINKER__LLVM-Lab_Debug CMakeFiles/LLVM-Lab.dir/src/files/ast.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/demo.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expression.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/addition.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/and.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/assignment.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/bool.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/bool2Int.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/call.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/comparison.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/division.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/float.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/float2Int.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/int.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/int2Bool.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/int2Float.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/multiplication.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/negative.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/or.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/string.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/sub.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/expressions/variable.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/function.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/scopeTable.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/statements/block.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/statements/for.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/statements/if.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/statements/return.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/statements/while.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/types/function.cpp.o CMakeFiles/LLVM-Lab.dir/src/files/types/simple.cpp.o CMakeFiles/LLVM-Lab.dir/lex.yy.cc.o CMakeFiles/LLVM-Lab.dir/parser.tab.cc.o
   FLAGS = -fno-rtti -std=c++11 -frtti -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
   LINK_FLAGS = -L/opt/homebrew/opt/llvm/lib -L/opt/homebrew/Cellar/llvm/17.0.6_1/lib -Wl,-search_paths_first -Wl,-headerpad_max_install_names -lLLVM-17
   OBJECT_DIR = CMakeFiles/LLVM-Lab.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_COMPILE_PDB = CMakeFiles/LLVM-Lab.dir/
   TARGET_FILE = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab
-  TARGET_PDB = /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LLVM-Lab.pdb
+  TARGET_PDB = LLVM-Lab.dbg
 
 
 #############################################
@@ -445,7 +358,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Custom command for parser.tab.cc
 
 build parser.tab.cc parser.tab.hh | ${cmake_ninja_workdir}parser.tab.cc ${cmake_ninja_workdir}parser.tab.hh: CUSTOM_COMMAND /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/frontend/parser.y
-  COMMAND = cd /Users/devsog12/Projects/CSDS337-Compiler-Design-Project && /opt/homebrew/opt/bison/bin/bison --defines=/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.hh -o /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc src/files/frontend/parser.y
+  COMMAND = cd /Users/devsog12/Projects/CSDS337-Compiler-Design-Project && /opt/homebrew/opt/bison/bin/bison -Wcounterexamples --defines=/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.hh -o /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc src/files/frontend/parser.y
   DESC = [BISON][Parser] Building parser with bison 3.8.2
   restat = 1
 
@@ -480,14 +393,14 @@ build all: phony /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/bin/LL
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindBISON.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindFLEX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindBISON.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindFLEX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/LCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Tasking-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindBISON.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindFLEX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindBISON.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindFLEX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
 
 
 #############################################

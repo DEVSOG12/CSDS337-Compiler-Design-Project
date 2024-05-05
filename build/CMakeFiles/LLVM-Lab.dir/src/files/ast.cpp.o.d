@@ -4,11 +4,11 @@ CMakeFiles/LLVM-Lab.dir/src/files/ast.cpp.o: \
   /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/function.h \
   /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/scopeTable.h \
   /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/varType.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Type.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/ArrayRef.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/Hashing.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/DataTypes.h \
-  /opt/homebrew/opt/llvm/include/llvm-c/DataTypes.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Type.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/ArrayRef.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/Hashing.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/DataTypes.h \
+  /opt/homebrew/opt/llvm@17/include/llvm-c/DataTypes.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/inttypes.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__config_site \
@@ -102,14 +102,14 @@ CMakeFiles/LLVM-Lab.dir/src/files/ast.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_pthread/_pthread_key_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_fsblkcnt_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/ErrorHandling.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/Compiler.h \
-  /opt/homebrew/opt/llvm/include/llvm/Config/llvm-config.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/ErrorHandling.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/Compiler.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Config/llvm-config.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/__stddef_max_align_t.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/SwapByteOrder.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/bit.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/SwapByteOrder.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/bit.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdint \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__verbose_abort \
@@ -244,7 +244,7 @@ CMakeFiles/LLVM-Lab.dir/src/files/ast.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__type_traits/remove_pointer.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__type_traits/result_of.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__type_traits/type_identity.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/type_traits.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/type_traits.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/utility \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__utility/as_const.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__utility/move.h \
@@ -781,116 +781,116 @@ CMakeFiles/LLVM-Lab.dir/src/files/ast.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__ios/fpos.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__string/extern_template_lists.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/SmallVector.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/STLExtras.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/ADL.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/STLForwardCompat.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/STLFunctionalExtras.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/identity.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/iterator.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/iterator_range.h \
-  /opt/homebrew/opt/llvm/include/llvm/Config/abi-breaking.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/CBindingWrapping.h \
-  /opt/homebrew/opt/llvm/include/llvm-c/Types.h \
-  /opt/homebrew/opt/llvm/include/llvm-c/ExternC.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/Casting.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/TypeSize.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/MathExtras.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/raw_ostream.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/StringRef.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/DenseMapInfo.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/SmallVector.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/STLExtras.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/ADL.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/STLForwardCompat.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/STLFunctionalExtras.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/identity.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/iterator.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/iterator_range.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Config/abi-breaking.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/CBindingWrapping.h \
+  /opt/homebrew/opt/llvm@17/include/llvm-c/Types.h \
+  /opt/homebrew/opt/llvm@17/include/llvm-c/ExternC.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/Casting.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/TypeSize.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/MathExtras.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/raw_ostream.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/StringRef.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/DenseMapInfo.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/system_error \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__errc \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cerrno \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Value.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Use.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/Alignment.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Value.def \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Value.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Use.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/Alignment.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Value.def \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__tree \
   /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/statement.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/IRBuilder.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/Twine.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/BasicBlock.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/ilist.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/simple_ilist.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/ilist_base.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/ilist_node_base.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/PointerIntPair.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/PointerLikeTypeTraits.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/ilist_iterator.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/ilist_node.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/ilist_node_options.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Instruction.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/Bitfields.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/DebugLoc.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/TrackingMDRef.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Metadata.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/DenseMap.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/EpochTracker.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/AlignOf.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/MemAlloc.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/ReverseIteration.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/PointerUnion.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Constant.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/User.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/LLVMContext.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/DiagnosticHandler.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/FixedMetadataKinds.def \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Metadata.def \
-  /opt/homebrew/opt/llvm/include/llvm/IR/SymbolTableListTraits.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/AtomicOrdering.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Instruction.def \
-  /opt/homebrew/opt/llvm/include/llvm/IR/ConstantFolder.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Constants.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/APFloat.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/APInt.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/FloatingPointMode.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/BitmaskEnum.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/StringSwitch.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/DerivedTypes.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/OperandTraits.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/ConstantFold.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/InstrTypes.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/Sequence.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/StringMap.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/StringMapEntry.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/AllocatorBase.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Attributes.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/CodeGen.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/ModRef.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Attributes.inc \
-  /opt/homebrew/opt/llvm/include/llvm/IR/CallingConv.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Function.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/DenseSet.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Argument.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/GlobalObject.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/GlobalValue.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/MD5.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/Endian.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/IRBuilderFolder.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Operator.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/MapVector.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/FMF.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/DataLayout.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/TrailingObjects.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/FPEnv.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/GlobalVariable.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Instructions.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/CFG.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/GraphTraits.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Intrinsics.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/IntrinsicEnums.inc \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Module.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Comdat.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/SmallPtrSet.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/GlobalAlias.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/GlobalIFunc.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/ProfileSummary.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/ValueHandle.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/IRBuilder.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/Twine.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/BasicBlock.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/ilist.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/simple_ilist.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/ilist_base.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/ilist_node_base.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/PointerIntPair.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/PointerLikeTypeTraits.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/ilist_iterator.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/ilist_node.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/ilist_node_options.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Instruction.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/Bitfields.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/DebugLoc.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/TrackingMDRef.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Metadata.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/DenseMap.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/EpochTracker.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/AlignOf.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/MemAlloc.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/ReverseIteration.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/PointerUnion.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Constant.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/User.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/LLVMContext.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/DiagnosticHandler.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/FixedMetadataKinds.def \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Metadata.def \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/SymbolTableListTraits.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/AtomicOrdering.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Instruction.def \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/ConstantFolder.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Constants.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/APFloat.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/APInt.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/FloatingPointMode.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/BitmaskEnum.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/StringSwitch.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/DerivedTypes.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/OperandTraits.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/ConstantFold.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/InstrTypes.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/Sequence.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/StringMap.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/StringMapEntry.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/AllocatorBase.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Attributes.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/CodeGen.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/ModRef.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Attributes.inc \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/CallingConv.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Function.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/DenseSet.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Argument.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/GlobalObject.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/GlobalValue.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/MD5.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/Endian.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/IRBuilderFolder.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Operator.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/MapVector.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/FMF.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/DataLayout.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/TrailingObjects.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/FPEnv.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/GlobalVariable.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Instructions.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/CFG.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/GraphTraits.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Intrinsics.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/IntrinsicEnums.inc \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Module.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Comdat.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/SmallPtrSet.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/GlobalAlias.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/GlobalIFunc.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/ProfileSummary.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/ValueHandle.h \
   /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/types/function.h \
   /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/types/../varType.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/LegacyPassManager.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/LegacyPassManager.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/ios \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__locale \
@@ -919,53 +919,53 @@ CMakeFiles/LLVM-Lab.dir/src/files/ast.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/_types/_nl_item.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/cstdarg \
-  /opt/homebrew/opt/llvm/include/llvm/Bitcode/BitcodeWriter.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/ModuleSummaryIndex.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/SmallString.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/StringExtras.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/APSInt.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/ConstantRange.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/Allocator.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/ScaledNumber.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/StringSaver.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Bitcode/BitcodeWriter.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/ModuleSummaryIndex.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/SmallString.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/StringExtras.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/APSInt.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/ConstantRange.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/Allocator.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/ScaledNumber.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/StringSaver.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/set \
-  /opt/homebrew/opt/llvm/include/llvm/MC/StringTableBuilder.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/CachedHashString.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/MemoryBufferRef.h \
-  /opt/homebrew/opt/llvm/include/llvm/Transforms/Scalar.h \
-  /opt/homebrew/opt/llvm/include/llvm/Transforms/Utils/SimplifyCFGOptions.h \
-  /opt/homebrew/opt/llvm/include/llvm/Transforms/Scalar/GVN.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/SetVector.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/Dominators.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/DepthFirstIterator.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/PassManager.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/TinyPtrVector.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/PassInstrumentation.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/Any.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/FunctionExtras.h \
-  /opt/homebrew/opt/llvm/include/llvm/IR/PassManagerInternal.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/TimeProfiler.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/Error.h \
-  /opt/homebrew/opt/llvm/include/llvm-c/Error.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/Debug.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/ErrorOr.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/Format.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/TypeName.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/MC/StringTableBuilder.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/CachedHashString.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/MemoryBufferRef.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Transforms/Scalar.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Transforms/Utils/SimplifyCFGOptions.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Transforms/Scalar/GVN.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/SetVector.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/Dominators.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/DepthFirstIterator.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/PassManager.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/TinyPtrVector.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/PassInstrumentation.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/Any.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/FunctionExtras.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/IR/PassManagerInternal.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/TimeProfiler.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/Error.h \
+  /opt/homebrew/opt/llvm@17/include/llvm-c/Error.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/Debug.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/ErrorOr.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/Format.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/TypeName.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/list \
-  /opt/homebrew/opt/llvm/include/llvm/Pass.h \
-  /opt/homebrew/opt/llvm/include/llvm/PassAnalysisSupport.h \
-  /opt/homebrew/opt/llvm/include/llvm/PassSupport.h \
-  /opt/homebrew/opt/llvm/include/llvm/PassInfo.h \
-  /opt/homebrew/opt/llvm/include/llvm/PassRegistry.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/RWMutex.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/Threading.h \
-  /opt/homebrew/opt/llvm/include/llvm/ADT/BitVector.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Pass.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/PassAnalysisSupport.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/PassSupport.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/PassInfo.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/PassRegistry.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/RWMutex.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/Threading.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/ADT/BitVector.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/ciso646 \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/shared_mutex \
-  /opt/homebrew/opt/llvm/include/llvm/Support/CFGDiff.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/CFGUpdate.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/GenericDomTree.h \
-  /opt/homebrew/opt/llvm/include/llvm/Support/GenericDomTreeConstruction.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/CFGDiff.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/CFGUpdate.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/GenericDomTree.h \
+  /opt/homebrew/opt/llvm@17/include/llvm/Support/GenericDomTreeConstruction.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/queue \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk/usr/include/c++/v1/deque \
-  /opt/homebrew/opt/llvm/include/llvm/Transforms/Utils.h
+  /opt/homebrew/opt/llvm@17/include/llvm/Transforms/Utils.h

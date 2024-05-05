@@ -71,7 +71,7 @@ include CMakeFiles/LLVM-Lab.dir/flags.make
 
 parser.tab.cc: /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files/frontend/parser.y
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "[BISON][Parser] Building parser with bison 3.8.2"
-	cd /Users/devsog12/Projects/CSDS337-Compiler-Design-Project && /opt/homebrew/opt/bison/bin/bison --defines=/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.hh -o /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.cc src/files/frontend/parser.y
+	cd /Users/devsog12/Projects/CSDS337-Compiler-Design-Project && /opt/homebrew/opt/bison/bin/bison -Wcounterexamples --defines=/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.hh -o /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.cc src/files/frontend/parser.y
 
 parser.tab.hh: parser.tab.cc
 	@$(CMAKE_COMMAND) -E touch_nocreate parser.tab.hh

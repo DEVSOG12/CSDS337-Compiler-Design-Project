@@ -48,35 +48,38 @@ extern int yydebug;
 #line 1 "src/files/frontend/parser.y"
 
   #include <stdio.h>
-  #include <stdlib.h>
-  #include <vector>
-  #include <string>
-  #include <cstring>
-  #include <variant>
-  #include <iostream>
-  #include "ast.h"
-  #include "expressions/call.h"
-  #include "expressions/int.h"
-  #include "expressions/float.h"
-  #include "expressions/string.h"
-  #include "expressions/variable.h"
-  #include "expressions/addition.h"
-  #include "expressions/subtraction.h"
-  #include "expressions/multiplication.h"
-  #include "expressions/division.h"
-  #include "expressions/assignment.h"
-  #include "expressions/comparison.h"
-  #include "expressions/and.h"
-  #include "expressions/or.h"
-  #include "statements/block.h"
-  #include "statements/for.h"
-  #include "statements/while.h"
-  #include "statements/if.h"
-  #include "statements/return.h"
-  #include "types/simple.h"
-  extern FILE *yyin;
+#include <stdlib.h>
+#include <vector>
+#include <string>
+#include <cstring>
+#include <variant>
+#include <iostream>
+  //all of these includes are done as relative paths starting from the build/ directory, since that's where CMake places parser.tab.cc
+#include "../src/files/ast.h"
+#include "../src/files/expressions/call.h"
+#include "../src/files/expressions/int.h"
+#include "../src/files/expressions/float.h"
+#include "../src/files/expressions/string.h"
+#include "../src/files/expressions/bool.h"
+#include "../src/files/expressions/variable.h"
+#include "../src/files/expressions/addition.h"
+#include "../src/files/expressions/subtraction.h"
+#include "../src/files/expressions/multiplication.h"
+#include "../src/files/expressions/division.h"
+#include "../src/files/expressions/assignment.h"
+#include "../src/files/expressions/comparison.h"
+#include "../src/files/expressions/and.h"
+#include "../src/files/expressions/or.h"
+#include "../src/files/statements/block.h"
+#include "../src/files/statements/while.h"
+#include "../src/files/statements/for.h"
+#include "../src/files/statements/if.h"
+#include "../src/files/statements/return.h"
+#include "../src/files/types/simple.h"
+extern FILE *yyin;
+ 
 
-#line 80 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.hh"
+#line 83 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.hh"
 
 /* Token kinds.  */
 #ifndef YYTOKENTYPE
@@ -87,40 +90,55 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    IDENTIFIER = 258,              /* IDENTIFIER  */
-    INTEGER = 259,                 /* INTEGER  */
-    BOOLEAN = 260,                 /* BOOLEAN  */
-    FLOAT = 261,                   /* FLOAT  */
-    EQUALS = 262,                  /* EQUALS  */
-    PLUS = 263,                    /* PLUS  */
-    MINUS = 264,                   /* MINUS  */
-    TIMES = 265,                   /* TIMES  */
-    DIVIDEDBY = 266,               /* DIVIDEDBY  */
-    EQ = 267,                      /* EQ  */
-    NEQ = 268,                     /* NEQ  */
-    GT = 269,                      /* GT  */
-    GTE = 270,                     /* GTE  */
-    LT = 271,                      /* LT  */
-    LTE = 272,                     /* LTE  */
-    RETURN = 273,                  /* RETURN  */
-    INDENT = 274,                  /* INDENT  */
-    DEDENT = 275,                  /* DEDENT  */
-    NEWLINE = 276,                 /* NEWLINE  */
+    NAME = 258,                    /* NAME  */
+    NEWLINE = 259,                 /* NEWLINE  */
+    INDENT = 260,                  /* INDENT  */
+    DEDENT = 261,                  /* DEDENT  */
+    COLON = 262,                   /* COLON  */
+    PRINT = 263,                   /* PRINT  */
+    FOR = 264,                     /* FOR  */
+    ID = 265,                      /* ID  */
+    BOOL_TYPE = 266,               /* BOOL_TYPE  */
+    INT_TYPE = 267,                /* INT_TYPE  */
+    FLOAT_TYPE = 268,              /* FLOAT_TYPE  */
+    STRING_TYPE = 269,             /* STRING_TYPE  */
+    VOID_TYPE = 270,               /* VOID_TYPE  */
+    SEMICOLON = 271,               /* SEMICOLON  */
+    LPAREN = 272,                  /* LPAREN  */
+    RPAREN = 273,                  /* RPAREN  */
+    COMMA = 274,                   /* COMMA  */
+    LBRACE = 275,                  /* LBRACE  */
+    RBRACE = 276,                  /* RBRACE  */
     IF = 277,                      /* IF  */
-    COLON = 278,                   /* COLON  */
-    AND = 279,                     /* AND  */
-    BREAK = 280,                   /* BREAK  */
-    DEF = 281,                     /* DEF  */
-    ELIF = 282,                    /* ELIF  */
-    ELSE = 283,                    /* ELSE  */
-    FOR = 284,                     /* FOR  */
-    NOT = 285,                     /* NOT  */
-    OR = 286,                      /* OR  */
-    WHILE = 287,                   /* WHILE  */
-    SEMICOLON = 288,               /* SEMICOLON  */
-    LPAREN = 289,                  /* LPAREN  */
-    RPAREN = 290,                  /* RPAREN  */
-    COMMA = 291                    /* COMMA  */
+    ELIF = 278,                    /* ELIF  */
+    ASSIGNMENT = 279,              /* ASSIGNMENT  */
+    TAB = 280,                     /* TAB  */
+    ELSE = 281,                    /* ELSE  */
+    WHILE = 282,                   /* WHILE  */
+    BREAK = 283,                   /* BREAK  */
+    RETURN = 284,                  /* RETURN  */
+    EQUALS_SIGN = 285,             /* EQUALS_SIGN  */
+    LOGICAL_OR = 286,              /* LOGICAL_OR  */
+    LOGICAL_AND = 287,             /* LOGICAL_AND  */
+    LOGICAL_NOT = 288,             /* LOGICAL_NOT  */
+    RELOP_GT = 289,                /* RELOP_GT  */
+    RELOP_LT = 290,                /* RELOP_LT  */
+    RELOP_GE = 291,                /* RELOP_GE  */
+    RELOP_LE = 292,                /* RELOP_LE  */
+    RELOP_EQ = 293,                /* RELOP_EQ  */
+    RELOP_NE = 294,                /* RELOP_NE  */
+    ARITH_PLUS = 295,              /* ARITH_PLUS  */
+    ARITH_MINUS = 296,             /* ARITH_MINUS  */
+    ARITH_MULT = 297,              /* ARITH_MULT  */
+    ARITH_DIV = 298,               /* ARITH_DIV  */
+    ARITH_MOD = 299,               /* ARITH_MOD  */
+    VARIADIC = 300,                /* VARIADIC  */
+    BOOL_LITERAL = 301,            /* BOOL_LITERAL  */
+    INT_LITERAL = 302,             /* INT_LITERAL  */
+    FLOAT_LITERAL = 303,           /* FLOAT_LITERAL  */
+    STRING_LITERAL = 304,          /* STRING_LITERAL  */
+    EOL = 305,                     /* EOL  */
+    DEF = 306                      /* DEF  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -129,13 +147,24 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 54 "src/files/frontend/parser.y"
+#line 58 "src/files/frontend/parser.y"
 
-  float value;
-  std::string* str;
-  int token;
+  bool boolval;
+  int intval;
+  double fltval;
+  char *strval;
+  struct node *nodeval;
+  ASTFunctionParameter *var;
+  std::vector<ASTFunctionParameter *> *vars;
+  ASTStatement *stmt;
+  std::vector<ASTStatement *> *stmtVec;
+  ASTExpression *exp;
+  std::vector<ASTExpression *> *exprVec;
+  VarType *type;
+  ASTExpressionComparisonType rel;
+  ASTStatementBlock *stmtBlock;
 
-#line 139 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.hh"
+#line 168 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.hh"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -143,23 +172,9 @@ typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
-/* Location type.  */
-#if ! defined YYLTYPE && ! defined YYLTYPE_IS_DECLARED
-typedef struct YYLTYPE YYLTYPE;
-struct YYLTYPE
-{
-  int first_line;
-  int first_column;
-  int last_line;
-  int last_column;
-};
-# define YYLTYPE_IS_DECLARED 1
-# define YYLTYPE_IS_TRIVIAL 1
-#endif
-
 
 extern YYSTYPE yylval;
-extern YYLTYPE yylloc;
+
 
 int yyparse (void);
 

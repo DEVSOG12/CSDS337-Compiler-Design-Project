@@ -85,4 +85,8 @@ public:
     // mod: Module to add the function to.
     // builder: IR builder used to build instructions.
     void Compile(llvm::Module& mod, llvm::IRBuilder<>& builder);
+
+
+    // bool vlau
+    bool getLLVMValue(llvm::Value * val);
 };

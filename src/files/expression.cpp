@@ -151,6 +151,7 @@ bool ASTExpression::CoerceTypes(ASTFunction& func, std::unique_ptr<ASTExpression
 
 }
 
+
 std::unique_ptr<VarType> ASTExpression::StatementReturnType(ASTFunction& func)
 {
     return nullptr; // Expression returns nothing statement wise.

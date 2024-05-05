@@ -4,7 +4,7 @@ project(LLVM-Lab)
 project(LLVM-Lab)
 
 set(CMAKE_CXX_STANDARD 17)
-set(LLVM_PATH "/opt/homebrew/opt/llvm")
+set(LLVM_PATH "/opt/homebrew/opt/llvm@17")
 
 # Set binary output destination.
 set(BINARY_OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/bin)
@@ -57,13 +57,14 @@ execute_process(COMMAND llvm-config --ldflags --system-libs --libs all OUTPUT_VA
 string(STRIP "${LLVM_FLAGS}" LLVM_FLAGS)
 string(REPLACE "\n" " " LLVM_FLAGS "${LLVM_FLAGS}")
 
-# Find bison:
+# Find bison: add  -Wcounterexamples flag to bison
 find_package(BISON)
-BISON_TARGET(Parser "src/files/frontend/parser.y" "${CMAKE_CURRENT_BINARY_DIR}/parser.tab.cc" DEFINES_FILE "${CMAKE_CURRENT_BINARY_DIR}/parser.tab.hh")
+BISON_TARGET(Parser "src/files/frontend/parser.y" "${CMAKE_CURRENT_BINARY_DIR}/parser.tab.cc" DEFINES_FILE "${CMAKE_CURRENT_BINARY_DIR}/parser.tab.hh"
+    COMPILE_FLAGS "-Wcounterexamples")
 
 # Find flex:
 find_package(FLEX)
-FLEX_TARGET(Lexer "src/files/frontend/lexer.l" "${CMAKE_CURRENT_BINARY_DIR}/lex.yy.cc")
+FLEX_TARGET(Lexer "src/files/frontend/lexer.l" "${CMAKE_CURRENT_BINARY_DIR}/lex.yy.cc" )
 ADD_FLEX_BISON_DEPENDENCY(Lexer Parser)
 
 # Finally link the program with LLVM.

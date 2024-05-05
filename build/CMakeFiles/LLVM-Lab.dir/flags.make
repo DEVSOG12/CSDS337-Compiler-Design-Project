@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/clang++
 CXX_DEFINES = -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS
 
-CXX_INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
+CXX_INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm@17/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
 
 CXX_FLAGSarm64 =  -fno-rtti -std=c++11 -frtti -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
 

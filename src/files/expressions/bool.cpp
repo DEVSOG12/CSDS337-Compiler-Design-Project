@@ -20,3 +20,8 @@ std::string ASTExpressionBool::ToString(const std::string& prefix)
 {
     return value ? "true" : "false";
 }
+
+bool ASTExpressionBool::GetValue()
+{
+    return value;
+}

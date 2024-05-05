@@ -48,35 +48,37 @@ extern int yydebug;
 #line 1 "src/files/frontend/parser.y"
 
   #include <stdio.h>
-  #include <stdlib.h>
-  #include <vector>
-  #include <string>
-  #include <cstring>
-  #include <variant>
-  #include <iostream>
-  #include "ast.h"
-  #include "expressions/call.h"
-  #include "expressions/int.h"
-  #include "expressions/float.h"
-  #include "expressions/string.h"
-  #include "expressions/variable.h"
-  #include "expressions/addition.h"
-  #include "expressions/subtraction.h"
-  #include "expressions/multiplication.h"
-  #include "expressions/division.h"
-  #include "expressions/assignment.h"
-  #include "expressions/comparison.h"
-  #include "expressions/and.h"
-  #include "expressions/or.h"
-  #include "statements/block.h"
-  #include "statements/for.h"
-  #include "statements/while.h"
-  #include "statements/if.h"
-  #include "statements/return.h"
-  #include "types/simple.h"
-  extern FILE *yyin;
+#include <stdlib.h>
+#include <vector>
+#include <string>
+#include <cstring>
+#include <variant>
+#include <iostream>
+  //all of these includes are done as relative paths starting from the build/ directory, since that's where CMake places parser.tab.cc
+#include "../src/files/ast.h"
+#include "../src/files/expressions/call.h"
+#include "../src/files/expressions/int.h"
+#include "../src/files/expressions/float.h"
+#include "../src/files/expressions/string.h"
+#include "../src/files/expressions/variable.h"
+#include "../src/files/expressions/addition.h"
+#include "../src/files/expressions/subtraction.h"
+#include "../src/files/expressions/multiplication.h"
+#include "../src/files/expressions/division.h"
+#include "../src/files/expressions/assignment.h"
+#include "../src/files/expressions/comparison.h"
+#include "../src/files/expressions/and.h"
+#include "../src/files/expressions/or.h"
+#include "../src/files/statements/block.h"
+#include "../src/files/statements/while.h"
+#include "../src/files/statements/for.h"
+#include "../src/files/statements/if.h"
+#include "../src/files/statements/return.h"
+#include "../src/files/types/simple.h"
+extern FILE *yyin;
+ 
 
-#line 80 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.hh"
+#line 82 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.hh"
 
 /* Token kinds.  */
 #ifndef YYTOKENTYPE
@@ -88,39 +90,38 @@ extern int yydebug;
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
     IDENTIFIER = 258,              /* IDENTIFIER  */
-    INTEGER = 259,                 /* INTEGER  */
-    BOOLEAN = 260,                 /* BOOLEAN  */
-    FLOAT = 261,                   /* FLOAT  */
-    EQUALS = 262,                  /* EQUALS  */
-    PLUS = 263,                    /* PLUS  */
-    MINUS = 264,                   /* MINUS  */
-    TIMES = 265,                   /* TIMES  */
-    DIVIDEDBY = 266,               /* DIVIDEDBY  */
-    EQ = 267,                      /* EQ  */
-    NEQ = 268,                     /* NEQ  */
-    GT = 269,                      /* GT  */
-    GTE = 270,                     /* GTE  */
-    LT = 271,                      /* LT  */
-    LTE = 272,                     /* LTE  */
-    RETURN = 273,                  /* RETURN  */
-    INDENT = 274,                  /* INDENT  */
-    DEDENT = 275,                  /* DEDENT  */
-    NEWLINE = 276,                 /* NEWLINE  */
-    IF = 277,                      /* IF  */
-    COLON = 278,                   /* COLON  */
-    AND = 279,                     /* AND  */
-    BREAK = 280,                   /* BREAK  */
-    DEF = 281,                     /* DEF  */
-    ELIF = 282,                    /* ELIF  */
-    ELSE = 283,                    /* ELSE  */
-    FOR = 284,                     /* FOR  */
-    NOT = 285,                     /* NOT  */
-    OR = 286,                      /* OR  */
-    WHILE = 287,                   /* WHILE  */
-    SEMICOLON = 288,               /* SEMICOLON  */
-    LPAREN = 289,                  /* LPAREN  */
-    RPAREN = 290,                  /* RPAREN  */
-    COMMA = 291                    /* COMMA  */
+    FLOAT = 259,                   /* FLOAT  */
+    INTEGER = 260,                 /* INTEGER  */
+    BOOLEAN = 261,                 /* BOOLEAN  */
+    INDENT = 262,                  /* INDENT  */
+    DEDENT = 263,                  /* DEDENT  */
+    NEWLINE = 264,                 /* NEWLINE  */
+    AND = 265,                     /* AND  */
+    BREAK = 266,                   /* BREAK  */
+    DEF = 267,                     /* DEF  */
+    ELIF = 268,                    /* ELIF  */
+    ELSE = 269,                    /* ELSE  */
+    FOR = 270,                     /* FOR  */
+    IF = 271,                      /* IF  */
+    NOT = 272,                     /* NOT  */
+    OR = 273,                      /* OR  */
+    RETURN = 274,                  /* RETURN  */
+    WHILE = 275,                   /* WHILE  */
+    ASSIGN = 276,                  /* ASSIGN  */
+    PLUS = 277,                    /* PLUS  */
+    MINUS = 278,                   /* MINUS  */
+    TIMES = 279,                   /* TIMES  */
+    DIVIDEDBY = 280,               /* DIVIDEDBY  */
+    EQ = 281,                      /* EQ  */
+    NEQ = 282,                     /* NEQ  */
+    GT = 283,                      /* GT  */
+    GTE = 284,                     /* GTE  */
+    LT = 285,                      /* LT  */
+    LTE = 286,                     /* LTE  */
+    LPAREN = 287,                  /* LPAREN  */
+    RPAREN = 288,                  /* RPAREN  */
+    COMMA = 289,                   /* COMMA  */
+    COLON = 290                    /* COLON  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -129,13 +130,23 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 54 "src/files/frontend/parser.y"
+#line 52 "src/files/frontend/parser.y"
 
-  float value;
-  std::string* str;
-  int token;
+  bool boolval;
+  int intval;
+  double fltval;
+  char *strval;
+  struct node *nodeval;
+  ASTFunctionParameter *var;
+  std::vector<ASTFunctionParameter *> *vars;
+  ASTStatement *stmt;
+  std::vector<ASTStatement *> *stmtVec;
+  ASTExpression *exp;
+  std::vector<ASTExpression *> *exprVec;
+  VarType *type;
+  ASTExpressionComparisonType rel;
 
-#line 139 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.hh"
+#line 150 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.hh"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -143,25 +154,22 @@ typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_DECLARED 1
 #endif
 
-/* Location type.  */
-#if ! defined YYLTYPE && ! defined YYLTYPE_IS_DECLARED
-typedef struct YYLTYPE YYLTYPE;
-struct YYLTYPE
-{
-  int first_line;
-  int first_column;
-  int last_line;
-  int last_column;
-};
-# define YYLTYPE_IS_DECLARED 1
-# define YYLTYPE_IS_TRIVIAL 1
+
+
+
+#ifndef YYPUSH_MORE_DEFINED
+# define YYPUSH_MORE_DEFINED
+enum { YYPUSH_MORE = 4 };
 #endif
 
+typedef struct yypstate yypstate;
 
-extern YYSTYPE yylval;
-extern YYLTYPE yylloc;
 
-int yyparse (void);
+int yypush_parse (yypstate *ps,
+                  int pushed_char, YYSTYPE const *pushed_val);
+
+yypstate *yypstate_new (void);
+void yypstate_delete (yypstate *ps);
 
 
 #endif /* !YY_YY_USERS_DEVSOG12_PROJECTS_CSDS337_COMPILER_DESIGN_PROJECT_CMAKE_BUILD_DEBUG_PARSER_TAB_HH_INCLUDED  */

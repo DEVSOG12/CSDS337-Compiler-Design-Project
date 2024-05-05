@@ -55,41 +55,30 @@
 #define YYSKELETON_NAME "yacc.c"
 
 /* Pure parsers.  */
-#define YYPURE 0
+#define YYPURE 2
 
 /* Push parsers.  */
-#define YYPUSH 0
+#define YYPUSH 1
 
 /* Pull parsers.  */
-#define YYPULL 1
+#define YYPULL 0
 
 
 
 
 /* First part of user prologue.  */
-#line 32 "src/files/frontend/parser.y"
+#line 33 "src/files/frontend/parser.y"
 
 #include "parser.tab.hh"
-#include "parser-p.hpp"
 
+  extern int yylex(void);
+  void yyerror(const char *s);
+  void save_to_dot(FILE *);
+  int trav_and_write(FILE *, node *);
 
+  AST ast("TestMod");
 
-extern int yylex(void);
-void yyerror(const char *s);
-
-AST ast("TestMod");
-
-
-
-//std::map<std::string, float> symbols;
-std::vector<std::string> characters;
-//std::map<std::string, float> syntax;
-std::string* goalStr;
-
-void yyerror(YYLTYPE* loc, const char* err);
-extern int yylex();
-
-#line 93 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+#line 82 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -121,48 +110,53 @@ enum yysymbol_kind_t
   YYSYMBOL_YYerror = 1,                    /* error  */
   YYSYMBOL_YYUNDEF = 2,                    /* "invalid token"  */
   YYSYMBOL_IDENTIFIER = 3,                 /* IDENTIFIER  */
-  YYSYMBOL_INTEGER = 4,                    /* INTEGER  */
-  YYSYMBOL_BOOLEAN = 5,                    /* BOOLEAN  */
-  YYSYMBOL_FLOAT = 6,                      /* FLOAT  */
-  YYSYMBOL_EQUALS = 7,                     /* EQUALS  */
-  YYSYMBOL_PLUS = 8,                       /* PLUS  */
-  YYSYMBOL_MINUS = 9,                      /* MINUS  */
-  YYSYMBOL_TIMES = 10,                     /* TIMES  */
-  YYSYMBOL_DIVIDEDBY = 11,                 /* DIVIDEDBY  */
-  YYSYMBOL_EQ = 12,                        /* EQ  */
-  YYSYMBOL_NEQ = 13,                       /* NEQ  */
-  YYSYMBOL_GT = 14,                        /* GT  */
-  YYSYMBOL_GTE = 15,                       /* GTE  */
-  YYSYMBOL_LT = 16,                        /* LT  */
-  YYSYMBOL_LTE = 17,                       /* LTE  */
-  YYSYMBOL_RETURN = 18,                    /* RETURN  */
-  YYSYMBOL_INDENT = 19,                    /* INDENT  */
-  YYSYMBOL_DEDENT = 20,                    /* DEDENT  */
-  YYSYMBOL_NEWLINE = 21,                   /* NEWLINE  */
-  YYSYMBOL_IF = 22,                        /* IF  */
-  YYSYMBOL_COLON = 23,                     /* COLON  */
-  YYSYMBOL_AND = 24,                       /* AND  */
-  YYSYMBOL_BREAK = 25,                     /* BREAK  */
-  YYSYMBOL_DEF = 26,                       /* DEF  */
-  YYSYMBOL_ELIF = 27,                      /* ELIF  */
-  YYSYMBOL_ELSE = 28,                      /* ELSE  */
-  YYSYMBOL_FOR = 29,                       /* FOR  */
-  YYSYMBOL_NOT = 30,                       /* NOT  */
-  YYSYMBOL_OR = 31,                        /* OR  */
-  YYSYMBOL_WHILE = 32,                     /* WHILE  */
-  YYSYMBOL_SEMICOLON = 33,                 /* SEMICOLON  */
-  YYSYMBOL_LPAREN = 34,                    /* LPAREN  */
-  YYSYMBOL_RPAREN = 35,                    /* RPAREN  */
-  YYSYMBOL_COMMA = 36,                     /* COMMA  */
-  YYSYMBOL_YYACCEPT = 37,                  /* $accept  */
-  YYSYMBOL_goal = 38,                      /* goal  */
-  YYSYMBOL_program = 39,                   /* program  */
-  YYSYMBOL_statement = 40,                 /* statement  */
-  YYSYMBOL_expression = 41,                /* expression  */
-  YYSYMBOL_conditionalExpr = 42,           /* conditionalExpr  */
-  YYSYMBOL_conditional = 43,               /* conditional  */
-  YYSYMBOL_ifelse = 44,                    /* ifelse  */
-  YYSYMBOL_flowcontrol = 45                /* flowcontrol  */
+  YYSYMBOL_FLOAT = 4,                      /* FLOAT  */
+  YYSYMBOL_INTEGER = 5,                    /* INTEGER  */
+  YYSYMBOL_BOOLEAN = 6,                    /* BOOLEAN  */
+  YYSYMBOL_INDENT = 7,                     /* INDENT  */
+  YYSYMBOL_DEDENT = 8,                     /* DEDENT  */
+  YYSYMBOL_NEWLINE = 9,                    /* NEWLINE  */
+  YYSYMBOL_AND = 10,                       /* AND  */
+  YYSYMBOL_BREAK = 11,                     /* BREAK  */
+  YYSYMBOL_DEF = 12,                       /* DEF  */
+  YYSYMBOL_ELIF = 13,                      /* ELIF  */
+  YYSYMBOL_ELSE = 14,                      /* ELSE  */
+  YYSYMBOL_FOR = 15,                       /* FOR  */
+  YYSYMBOL_IF = 16,                        /* IF  */
+  YYSYMBOL_NOT = 17,                       /* NOT  */
+  YYSYMBOL_OR = 18,                        /* OR  */
+  YYSYMBOL_RETURN = 19,                    /* RETURN  */
+  YYSYMBOL_WHILE = 20,                     /* WHILE  */
+  YYSYMBOL_ASSIGN = 21,                    /* ASSIGN  */
+  YYSYMBOL_PLUS = 22,                      /* PLUS  */
+  YYSYMBOL_MINUS = 23,                     /* MINUS  */
+  YYSYMBOL_TIMES = 24,                     /* TIMES  */
+  YYSYMBOL_DIVIDEDBY = 25,                 /* DIVIDEDBY  */
+  YYSYMBOL_EQ = 26,                        /* EQ  */
+  YYSYMBOL_NEQ = 27,                       /* NEQ  */
+  YYSYMBOL_GT = 28,                        /* GT  */
+  YYSYMBOL_GTE = 29,                       /* GTE  */
+  YYSYMBOL_LT = 30,                        /* LT  */
+  YYSYMBOL_LTE = 31,                       /* LTE  */
+  YYSYMBOL_LPAREN = 32,                    /* LPAREN  */
+  YYSYMBOL_RPAREN = 33,                    /* RPAREN  */
+  YYSYMBOL_COMMA = 34,                     /* COMMA  */
+  YYSYMBOL_COLON = 35,                     /* COLON  */
+  YYSYMBOL_YYACCEPT = 36,                  /* $accept  */
+  YYSYMBOL_program = 37,                   /* program  */
+  YYSYMBOL_statements = 38,                /* statements  */
+  YYSYMBOL_statement = 39,                 /* statement  */
+  YYSYMBOL_primary_expression = 40,        /* primary_expression  */
+  YYSYMBOL_negated_expression = 41,        /* negated_expression  */
+  YYSYMBOL_expression = 42,                /* expression  */
+  YYSYMBOL_assign_statement = 43,          /* assign_statement  */
+  YYSYMBOL_block = 44,                     /* block  */
+  YYSYMBOL_condition = 45,                 /* condition  */
+  YYSYMBOL_if_statement = 46,              /* if_statement  */
+  YYSYMBOL_elif_blocks = 47,               /* elif_blocks  */
+  YYSYMBOL_else_block = 48,                /* else_block  */
+  YYSYMBOL_while_statement = 49,           /* while_statement  */
+  YYSYMBOL_break_statement = 50            /* break_statement  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -360,33 +354,9 @@ typedef int yy_state_fast_t;
 
 #define YY_ASSERT(E) ((void) (0 && (E)))
 
-#if !defined yyoverflow
+#if 1
 
 /* The parser invokes alloca or malloc; define the necessary symbols.  */
-
-# ifdef YYSTACK_USE_ALLOCA
-#  if YYSTACK_USE_ALLOCA
-#   ifdef __GNUC__
-#    define YYSTACK_ALLOC __builtin_alloca
-#   elif defined __BUILTIN_VA_ARG_INCR
-#    include <alloca.h> /* INFRINGES ON USER NAME SPACE */
-#   elif defined _AIX
-#    define YYSTACK_ALLOC __alloca
-#   elif defined _MSC_VER
-#    include <malloc.h> /* INFRINGES ON USER NAME SPACE */
-#    define alloca _alloca
-#   else
-#    define YYSTACK_ALLOC alloca
-#    if ! defined _ALLOCA_H && ! defined EXIT_SUCCESS
-#     include <stdlib.h> /* INFRINGES ON USER NAME SPACE */
-      /* Use EXIT_SUCCESS as a witness for stdlib.h.  */
-#     ifndef EXIT_SUCCESS
-#      define EXIT_SUCCESS 0
-#     endif
-#    endif
-#   endif
-#  endif
-# endif
 
 # ifdef YYSTACK_ALLOC
    /* Pacify GCC's 'empty if-body' warning.  */
@@ -425,19 +395,17 @@ void free (void *); /* INFRINGES ON USER NAME SPACE */
 #   endif
 #  endif
 # endif
-#endif /* !defined yyoverflow */
+#endif /* 1 */
 
 #if (! defined yyoverflow \
      && (! defined __cplusplus \
-         || (defined YYLTYPE_IS_TRIVIAL && YYLTYPE_IS_TRIVIAL \
-             && defined YYSTYPE_IS_TRIVIAL && YYSTYPE_IS_TRIVIAL)))
+         || (defined YYSTYPE_IS_TRIVIAL && YYSTYPE_IS_TRIVIAL)))
 
 /* A type that is properly aligned for any stack member.  */
 union yyalloc
 {
   yy_state_t yyss_alloc;
   YYSTYPE yyvs_alloc;
-  YYLTYPE yyls_alloc;
 };
 
 /* The size of the maximum gap between one aligned stack and the next.  */
@@ -446,9 +414,8 @@ union yyalloc
 /* The size of an array large to enough to hold all stacks, each with
    N elements.  */
 # define YYSTACK_BYTES(N) \
-     ((N) * (YYSIZEOF (yy_state_t) + YYSIZEOF (YYSTYPE) \
-             + YYSIZEOF (YYLTYPE)) \
-      + 2 * YYSTACK_GAP_MAXIMUM)
+     ((N) * (YYSIZEOF (yy_state_t) + YYSIZEOF (YYSTYPE)) \
+      + YYSTACK_GAP_MAXIMUM)
 
 # define YYCOPY_NEEDED 1
 
@@ -491,21 +458,21 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  24
+#define YYFINAL  25
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   91
+#define YYLAST   131
 
 /* YYNTOKENS -- Number of terminals.  */
-#define YYNTOKENS  37
+#define YYNTOKENS  36
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  9
+#define YYNNTS  15
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  35
+#define YYNRULES  38
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  68
+#define YYNSTATES  76
 
 /* YYMAXUTOK -- Last valid token kind.  */
-#define YYMAXUTOK   291
+#define YYMAXUTOK   290
 
 
 /* YYTRANSLATE(TOKEN-NUM) -- Symbol number corresponding to TOKEN-NUM
@@ -548,24 +515,24 @@ static const yytype_int8 yytranslate[] =
        5,     6,     7,     8,     9,    10,    11,    12,    13,    14,
       15,    16,    17,    18,    19,    20,    21,    22,    23,    24,
       25,    26,    27,    28,    29,    30,    31,    32,    33,    34,
-      35,    36
+      35
 };
 
 #if YYDEBUG
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
-static const yytype_uint8 yyrline[] =
+static const yytype_int16 yyrline[] =
 {
-       0,    86,    86,    89,    94,    99,   100,   101,   102,   103,
-     104,   105,   113,   114,   115,   116,   117,   118,   119,   120,
-     121,   125,   126,   127,   128,   129,   130,   134,   135,   136,
-     137,   141,   142,   146,   148,   152
+       0,    99,    99,   113,   118,   134,   137,   140,   143,   149,
+     154,   159,   164,   169,   179,   189,   192,   195,   203,   211,
+     219,   227,   235,   243,   251,   259,   267,   278,   294,   309,
+     312,   320,   331,   356,   359,   377,   380,   391,   402
 };
 #endif
 
 /** Accessing symbol of state STATE.  */
 #define YY_ACCESSING_SYMBOL(State) YY_CAST (yysymbol_kind_t, yystos[State])
 
-#if YYDEBUG || 0
+#if 1
 /* The user-facing name of the symbol whose (internal) number is
    YYSYMBOL.  No bounds checking.  */
 static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
@@ -574,13 +541,15 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
    First, the terminals, then, starting at YYNTOKENS, nonterminals.  */
 static const char *const yytname[] =
 {
-  "\"end of file\"", "error", "\"invalid token\"", "IDENTIFIER",
-  "INTEGER", "BOOLEAN", "FLOAT", "EQUALS", "PLUS", "MINUS", "TIMES",
-  "DIVIDEDBY", "EQ", "NEQ", "GT", "GTE", "LT", "LTE", "RETURN", "INDENT",
-  "DEDENT", "NEWLINE", "IF", "COLON", "AND", "BREAK", "DEF", "ELIF",
-  "ELSE", "FOR", "NOT", "OR", "WHILE", "SEMICOLON", "LPAREN", "RPAREN",
-  "COMMA", "$accept", "goal", "program", "statement", "expression",
-  "conditionalExpr", "conditional", "ifelse", "flowcontrol", YY_NULLPTR
+  "\"end of file\"", "error", "\"invalid token\"", "IDENTIFIER", "FLOAT",
+  "INTEGER", "BOOLEAN", "INDENT", "DEDENT", "NEWLINE", "AND", "BREAK",
+  "DEF", "ELIF", "ELSE", "FOR", "IF", "NOT", "OR", "RETURN", "WHILE",
+  "ASSIGN", "PLUS", "MINUS", "TIMES", "DIVIDEDBY", "EQ", "NEQ", "GT",
+  "GTE", "LT", "LTE", "LPAREN", "RPAREN", "COMMA", "COLON", "$accept",
+  "program", "statements", "statement", "primary_expression",
+  "negated_expression", "expression", "assign_statement", "block",
+  "condition", "if_statement", "elif_blocks", "else_block",
+  "while_statement", "break_statement", YY_NULLPTR
 };
 
 static const char *
@@ -590,7 +559,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-30)
+#define YYPACT_NINF (-45)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -604,13 +573,14 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      24,    -5,    17,   -19,    77,   -11,    77,    21,    24,   -30,
-     -30,   -30,     1,   -30,    -4,     7,    24,   -30,   -30,   -30,
-     -30,    50,    19,    62,   -30,   -30,   -30,   -30,   -30,   -30,
-       1,    49,    24,    27,    28,    77,    77,    77,    77,    77,
-      77,    20,   -30,    30,    15,     1,     1,     1,     1,   -30,
-     -30,    33,    34,    74,    74,    74,    74,    74,    74,   -30,
-     -30,   -30,     0,     0,   -30,   -30,   -30,   -30
+      73,    -9,     4,    -1,    -1,    17,    73,   -45,   -45,   -45,
+     -45,   -45,    -1,   -45,   -45,   -45,   -45,   -45,     3,    -1,
+     -45,   -45,    86,    14,    15,   -45,   -45,    43,   -45,    74,
+      -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,    -1,
+      -1,    -1,     5,     9,   -45,   -45,    94,    94,   100,   100,
+     -45,   -45,   -45,   -45,   -45,   -45,   -45,    11,    12,    12,
+      73,   -45,   -45,    72,    -3,   -45,    -1,   -13,   -45,    16,
+      21,    39,    12,    12,   -45,   -45
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -618,25 +588,28 @@ static const yytype_int8 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,     0,     0,     7,     0,     0,     0,     0,     2,     4,
-       5,    31,     0,    35,     8,     0,     0,    21,    22,    24,
-      23,     0,     0,     0,     1,     3,    15,    12,    14,    13,
+       0,     0,     0,     0,     0,     0,     2,     3,     5,     6,
+       7,     8,     0,    38,     9,    10,    11,    12,     0,     0,
+      15,    16,    29,     0,     0,     1,     4,     0,    14,     0,
        0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-       0,     0,    34,     0,     0,     0,     0,     0,     0,    11,
-       9,     0,     0,    30,    29,    26,    28,    25,    27,    33,
-      32,    16,    17,    18,    19,    20,    10,     6
+       0,     0,     0,     0,    27,    13,    17,    18,    19,    20,
+      21,    22,    23,    24,    25,    26,    30,    31,     0,     0,
+       0,    33,    37,     0,    35,    28,     0,     0,    32,     0,
+       0,     0,     0,     0,    36,    34
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -30,   -30,   -30,     6,   -29,    -6,    52,   -30,   -30
+     -45,   -45,   -37,    -5,    35,   -45,     8,   -45,   -44,    -4,
+     -45,   -45,   -45,   -45,   -45
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,     7,     8,     9,    31,    21,    10,    11,    15
+       0,     5,     6,     7,    20,    21,    22,     8,    61,    23,
+       9,    64,    68,    10,    11
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -644,61 +617,70 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      23,    44,    12,     4,    26,    27,    28,    29,    14,     5,
-      47,    48,    22,     6,    25,    32,    62,    63,    64,    65,
-       1,    24,    34,    45,    46,    47,    48,     1,    33,    53,
-      54,    55,    56,    57,    58,    30,     2,     3,    50,     4,
-      42,    59,    13,     2,     3,     5,     4,    51,    52,     6,
-      61,    60,     5,    66,    67,    16,     6,    45,    46,    47,
-      48,     0,    35,    36,    37,    38,    39,    40,     0,     0,
-      49,     0,     0,    41,    35,    36,    37,    38,    39,    40,
-      17,    18,    19,    20,     0,    43,    35,    36,    37,    38,
-      39,    40
+      24,    26,    14,    15,    16,    17,    14,    15,    16,    17,
+      66,    67,    12,    13,    58,    62,    18,    25,    59,    60,
+      27,    40,    70,    63,    40,    40,    40,    29,    74,    75,
+      72,    19,    41,    41,    41,    19,    56,    57,    46,    47,
+      48,    49,    50,    51,    52,    53,    54,    55,    73,    42,
+      43,    71,    44,    28,     0,     0,     0,     0,    26,     0,
+       0,     0,    69,     0,     0,    30,    31,    32,    33,    34,
+      35,    36,    37,    38,    39,     1,     1,     0,     0,     0,
+      65,     0,     0,     2,     2,     0,     0,     0,     3,     3,
+       0,     0,     4,     4,     0,     0,    30,    31,    32,    33,
+      34,    35,    36,    37,    38,    39,     0,    45,    30,    31,
+      32,    33,    34,    35,    36,    37,    38,    39,    32,    33,
+      34,    35,    36,    37,    38,    39,    34,    35,    36,    37,
+      38,    39
 };
 
 static const yytype_int8 yycheck[] =
 {
-       6,    30,     7,    22,     3,     4,     5,     6,     2,    28,
-      10,    11,    23,    32,     8,    19,    45,    46,    47,    48,
-       3,     0,    16,     8,     9,    10,    11,     3,    21,    35,
-      36,    37,    38,    39,    40,    34,    19,    20,    32,    22,
-      21,    21,    25,    19,    20,    28,    22,    20,    20,    32,
-      35,    21,    28,    20,    20,     3,    32,     8,     9,    10,
-      11,    -1,    12,    13,    14,    15,    16,    17,    -1,    -1,
-      21,    -1,    -1,    23,    12,    13,    14,    15,    16,    17,
-       3,     4,     5,     6,    -1,    23,    12,    13,    14,    15,
-      16,    17
+       4,     6,     3,     4,     5,     6,     3,     4,     5,     6,
+      13,    14,    21,     9,     9,    59,    17,     0,     9,     7,
+      12,    10,    35,    60,    10,    10,    10,    19,    72,    73,
+       9,    32,    18,    18,    18,    32,    40,    41,    30,    31,
+      32,    33,    34,    35,    36,    37,    38,    39,     9,    35,
+      35,    35,     9,    18,    -1,    -1,    -1,    -1,    63,    -1,
+      -1,    -1,    66,    -1,    -1,    22,    23,    24,    25,    26,
+      27,    28,    29,    30,    31,     3,     3,    -1,    -1,    -1,
+       8,    -1,    -1,    11,    11,    -1,    -1,    -1,    16,    16,
+      -1,    -1,    20,    20,    -1,    -1,    22,    23,    24,    25,
+      26,    27,    28,    29,    30,    31,    -1,    33,    22,    23,
+      24,    25,    26,    27,    28,    29,    30,    31,    24,    25,
+      26,    27,    28,    29,    30,    31,    26,    27,    28,    29,
+      30,    31
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
    state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     3,    19,    20,    22,    28,    32,    38,    39,    40,
-      43,    44,     7,    25,    40,    45,    43,     3,     4,     5,
-       6,    42,    23,    42,     0,    40,     3,     4,     5,     6,
-      34,    41,    19,    21,    40,    12,    13,    14,    15,    16,
-      17,    23,    21,    23,    41,     8,     9,    10,    11,    21,
-      40,    20,    20,    42,    42,    42,    42,    42,    42,    21,
-      21,    35,    41,    41,    41,    41,    20,    20
+       0,     3,    11,    16,    20,    37,    38,    39,    43,    46,
+      49,    50,    21,     9,     3,     4,     5,     6,    17,    32,
+      40,    41,    42,    45,    45,     0,    39,    42,    40,    42,
+      22,    23,    24,    25,    26,    27,    28,    29,    30,    31,
+      10,    18,    35,    35,     9,    33,    42,    42,    42,    42,
+      42,    42,    42,    42,    42,    42,    45,    45,     9,     9,
+       7,    44,    44,    38,    47,     8,    13,    14,    48,    45,
+      35,    35,     9,     9,    44,    44
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    37,    38,    39,    39,    40,    40,    40,    40,    40,
-      40,    40,    41,    41,    41,    41,    41,    41,    41,    41,
-      41,    42,    42,    42,    42,    42,    42,    42,    42,    42,
-      42,    43,    43,    44,    44,    45
+       0,    36,    37,    38,    38,    39,    39,    39,    39,    40,
+      40,    40,    40,    40,    41,    42,    42,    42,    42,    42,
+      42,    42,    42,    42,    42,    42,    42,    43,    44,    45,
+      45,    45,    46,    47,    47,    48,    48,    49,    50
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     1,     2,     1,     1,     5,     1,     2,     4,
-       5,     4,     1,     1,     1,     1,     3,     3,     3,     3,
-       3,     1,     1,     1,     1,     3,     3,     3,     3,     3,
-       3,     1,     4,     4,     3,     1
+       0,     2,     1,     1,     2,     1,     1,     1,     1,     1,
+       1,     1,     1,     3,     2,     1,     1,     3,     3,     3,
+       3,     3,     3,     3,     3,     3,     3,     4,     3,     1,
+       3,     3,     7,     0,     6,     0,     4,     5,     2
 };
 
 
@@ -736,32 +718,6 @@ enum { YYENOMEM = -2 };
    Use YYerror or YYUNDEF. */
 #define YYERRCODE YYUNDEF
 
-/* YYLLOC_DEFAULT -- Set CURRENT to span from RHS[1] to RHS[N].
-   If N is 0, then set CURRENT to the empty location which ends
-   the previous symbol: RHS[0] (always defined).  */
-
-#ifndef YYLLOC_DEFAULT
-# define YYLLOC_DEFAULT(Current, Rhs, N)                                \
-    do                                                                  \
-      if (N)                                                            \
-        {                                                               \
-          (Current).first_line   = YYRHSLOC (Rhs, 1).first_line;        \
-          (Current).first_column = YYRHSLOC (Rhs, 1).first_column;      \
-          (Current).last_line    = YYRHSLOC (Rhs, N).last_line;         \
-          (Current).last_column  = YYRHSLOC (Rhs, N).last_column;       \
-        }                                                               \
-      else                                                              \
-        {                                                               \
-          (Current).first_line   = (Current).last_line   =              \
-            YYRHSLOC (Rhs, 0).last_line;                                \
-          (Current).first_column = (Current).last_column =              \
-            YYRHSLOC (Rhs, 0).last_column;                              \
-        }                                                               \
-    while (0)
-#endif
-
-#define YYRHSLOC(Rhs, K) ((Rhs)[K])
-
 
 /* Enable debugging if requested.  */
 #if YYDEBUG
@@ -778,63 +734,6 @@ do {                                            \
 } while (0)
 
 
-/* YYLOCATION_PRINT -- Print the location on the stream.
-   This macro was not mandated originally: define only if we know
-   we won't break user code: when these are the locations we know.  */
-
-# ifndef YYLOCATION_PRINT
-
-#  if defined YY_LOCATION_PRINT
-
-   /* Temporary convenience wrapper in case some people defined the
-      undocumented and private YY_LOCATION_PRINT macros.  */
-#   define YYLOCATION_PRINT(File, Loc)  YY_LOCATION_PRINT(File, *(Loc))
-
-#  elif defined YYLTYPE_IS_TRIVIAL && YYLTYPE_IS_TRIVIAL
-
-/* Print *YYLOCP on YYO.  Private, do not rely on its existence. */
-
-YY_ATTRIBUTE_UNUSED
-static int
-yy_location_print_ (FILE *yyo, YYLTYPE const * const yylocp)
-{
-  int res = 0;
-  int end_col = 0 != yylocp->last_column ? yylocp->last_column - 1 : 0;
-  if (0 <= yylocp->first_line)
-    {
-      res += YYFPRINTF (yyo, "%d", yylocp->first_line);
-      if (0 <= yylocp->first_column)
-        res += YYFPRINTF (yyo, ".%d", yylocp->first_column);
-    }
-  if (0 <= yylocp->last_line)
-    {
-      if (yylocp->first_line < yylocp->last_line)
-        {
-          res += YYFPRINTF (yyo, "-%d", yylocp->last_line);
-          if (0 <= end_col)
-            res += YYFPRINTF (yyo, ".%d", end_col);
-        }
-      else if (0 <= end_col && yylocp->first_column < end_col)
-        res += YYFPRINTF (yyo, "-%d", end_col);
-    }
-  return res;
-}
-
-#   define YYLOCATION_PRINT  yy_location_print_
-
-    /* Temporary convenience wrapper in case some people defined the
-       undocumented and private YY_LOCATION_PRINT macros.  */
-#   define YY_LOCATION_PRINT(File, Loc)  YYLOCATION_PRINT(File, &(Loc))
-
-#  else
-
-#   define YYLOCATION_PRINT(File, Loc) ((void) 0)
-    /* Temporary convenience wrapper in case some people defined the
-       undocumented and private YY_LOCATION_PRINT macros.  */
-#   define YY_LOCATION_PRINT  YYLOCATION_PRINT
-
-#  endif
-# endif /* !defined YYLOCATION_PRINT */
 
 
 # define YY_SYMBOL_PRINT(Title, Kind, Value, Location)                    \
@@ -843,7 +742,7 @@ do {                                                                      \
     {                                                                     \
       YYFPRINTF (stderr, "%s ", Title);                                   \
       yy_symbol_print (stderr,                                            \
-                  Kind, Value, Location); \
+                  Kind, Value); \
       YYFPRINTF (stderr, "\n");                                           \
     }                                                                     \
 } while (0)
@@ -855,11 +754,10 @@ do {                                                                      \
 
 static void
 yy_symbol_value_print (FILE *yyo,
-                       yysymbol_kind_t yykind, YYSTYPE const * const yyvaluep, YYLTYPE const * const yylocationp)
+                       yysymbol_kind_t yykind, YYSTYPE const * const yyvaluep)
 {
   FILE *yyoutput = yyo;
   YY_USE (yyoutput);
-  YY_USE (yylocationp);
   if (!yyvaluep)
     return;
   YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
@@ -874,14 +772,12 @@ yy_symbol_value_print (FILE *yyo,
 
 static void
 yy_symbol_print (FILE *yyo,
-                 yysymbol_kind_t yykind, YYSTYPE const * const yyvaluep, YYLTYPE const * const yylocationp)
+                 yysymbol_kind_t yykind, YYSTYPE const * const yyvaluep)
 {
   YYFPRINTF (yyo, "%s %s (",
              yykind < YYNTOKENS ? "token" : "nterm", yysymbol_name (yykind));
 
-  YYLOCATION_PRINT (yyo, yylocationp);
-  YYFPRINTF (yyo, ": ");
-  yy_symbol_value_print (yyo, yykind, yyvaluep, yylocationp);
+  yy_symbol_value_print (yyo, yykind, yyvaluep);
   YYFPRINTF (yyo, ")");
 }
 
@@ -914,7 +810,7 @@ do {                                                            \
 `------------------------------------------------*/
 
 static void
-yy_reduce_print (yy_state_t *yyssp, YYSTYPE *yyvsp, YYLTYPE *yylsp,
+yy_reduce_print (yy_state_t *yyssp, YYSTYPE *yyvsp,
                  int yyrule)
 {
   int yylno = yyrline[yyrule];
@@ -928,8 +824,7 @@ yy_reduce_print (yy_state_t *yyssp, YYSTYPE *yyvsp, YYLTYPE *yylsp,
       YYFPRINTF (stderr, "   $%d = ", yyi + 1);
       yy_symbol_print (stderr,
                        YY_ACCESSING_SYMBOL (+yyssp[yyi + 1 - yynrhs]),
-                       &yyvsp[(yyi + 1) - (yynrhs)],
-                       &(yylsp[(yyi + 1) - (yynrhs)]));
+                       &yyvsp[(yyi + 1) - (yynrhs)]);
       YYFPRINTF (stderr, "\n");
     }
 }
@@ -937,7 +832,7 @@ yy_reduce_print (yy_state_t *yyssp, YYSTYPE *yyvsp, YYLTYPE *yylsp,
 # define YY_REDUCE_PRINT(Rule)          \
 do {                                    \
   if (yydebug)                          \
-    yy_reduce_print (yyssp, yyvsp, yylsp, Rule); \
+    yy_reduce_print (yyssp, yyvsp, Rule); \
 } while (0)
 
 /* Nonzero means print parse trace.  It is left uninitialized so that
@@ -966,10 +861,313 @@ int yydebug;
 #ifndef YYMAXDEPTH
 # define YYMAXDEPTH 10000
 #endif
+/* Parser data structure.  */
+struct yypstate
+  {
+    /* Number of syntax errors so far.  */
+    int yynerrs;
+
+    yy_state_fast_t yystate;
+    /* Number of tokens to shift before error messages enabled.  */
+    int yyerrstatus;
+
+    /* Refer to the stacks through separate pointers, to allow yyoverflow
+       to reallocate them elsewhere.  */
+
+    /* Their size.  */
+    YYPTRDIFF_T yystacksize;
+
+    /* The state stack: array, bottom, top.  */
+    yy_state_t yyssa[YYINITDEPTH];
+    yy_state_t *yyss;
+    yy_state_t *yyssp;
+
+    /* The semantic value stack: array, bottom, top.  */
+    YYSTYPE yyvsa[YYINITDEPTH];
+    YYSTYPE *yyvs;
+    YYSTYPE *yyvsp;
+    /* Whether this instance has not started parsing yet.
+     * If 2, it corresponds to a finished parsing.  */
+    int yynew;
+  };
 
 
+/* Context of a parse error.  */
+typedef struct
+{
+  yypstate* yyps;
+  yysymbol_kind_t yytoken;
+} yypcontext_t;
+
+/* Put in YYARG at most YYARGN of the expected tokens given the
+   current YYCTX, and return the number of tokens stored in YYARG.  If
+   YYARG is null, return the number of expected tokens (guaranteed to
+   be less than YYNTOKENS).  Return YYENOMEM on memory exhaustion.
+   Return 0 if there are more than YYARGN expected tokens, yet fill
+   YYARG up to YYARGN. */
+static int
+yypstate_expected_tokens (yypstate *yyps,
+                          yysymbol_kind_t yyarg[], int yyargn)
+{
+  /* Actual size of YYARG. */
+  int yycount = 0;
+  int yyn = yypact[+*yyps->yyssp];
+  if (!yypact_value_is_default (yyn))
+    {
+      /* Start YYX at -YYN if negative to avoid negative indexes in
+         YYCHECK.  In other words, skip the first -YYN actions for
+         this state because they are default actions.  */
+      int yyxbegin = yyn < 0 ? -yyn : 0;
+      /* Stay within bounds of both yycheck and yytname.  */
+      int yychecklim = YYLAST - yyn + 1;
+      int yyxend = yychecklim < YYNTOKENS ? yychecklim : YYNTOKENS;
+      int yyx;
+      for (yyx = yyxbegin; yyx < yyxend; ++yyx)
+        if (yycheck[yyx + yyn] == yyx && yyx != YYSYMBOL_YYerror
+            && !yytable_value_is_error (yytable[yyx + yyn]))
+          {
+            if (!yyarg)
+              ++yycount;
+            else if (yycount == yyargn)
+              return 0;
+            else
+              yyarg[yycount++] = YY_CAST (yysymbol_kind_t, yyx);
+          }
+    }
+  if (yyarg && yycount == 0 && 0 < yyargn)
+    yyarg[0] = YYSYMBOL_YYEMPTY;
+  return yycount;
+}
 
 
+/* Similar to the previous function.  */
+static int
+yypcontext_expected_tokens (const yypcontext_t *yyctx,
+                            yysymbol_kind_t yyarg[], int yyargn)
+{
+  return yypstate_expected_tokens (yyctx->yyps, yyarg, yyargn);
+}
+
+
+#ifndef yystrlen
+# if defined __GLIBC__ && defined _STRING_H
+#  define yystrlen(S) (YY_CAST (YYPTRDIFF_T, strlen (S)))
+# else
+/* Return the length of YYSTR.  */
+static YYPTRDIFF_T
+yystrlen (const char *yystr)
+{
+  YYPTRDIFF_T yylen;
+  for (yylen = 0; yystr[yylen]; yylen++)
+    continue;
+  return yylen;
+}
+# endif
+#endif
+
+#ifndef yystpcpy
+# if defined __GLIBC__ && defined _STRING_H && defined _GNU_SOURCE
+#  define yystpcpy stpcpy
+# else
+/* Copy YYSRC to YYDEST, returning the address of the terminating '\0' in
+   YYDEST.  */
+static char *
+yystpcpy (char *yydest, const char *yysrc)
+{
+  char *yyd = yydest;
+  const char *yys = yysrc;
+
+  while ((*yyd++ = *yys++) != '\0')
+    continue;
+
+  return yyd - 1;
+}
+# endif
+#endif
+
+#ifndef yytnamerr
+/* Copy to YYRES the contents of YYSTR after stripping away unnecessary
+   quotes and backslashes, so that it's suitable for yyerror.  The
+   heuristic is that double-quoting is unnecessary unless the string
+   contains an apostrophe, a comma, or backslash (other than
+   backslash-backslash).  YYSTR is taken from yytname.  If YYRES is
+   null, do not copy; instead, return the length of what the result
+   would have been.  */
+static YYPTRDIFF_T
+yytnamerr (char *yyres, const char *yystr)
+{
+  if (*yystr == '"')
+    {
+      YYPTRDIFF_T yyn = 0;
+      char const *yyp = yystr;
+      for (;;)
+        switch (*++yyp)
+          {
+          case '\'':
+          case ',':
+            goto do_not_strip_quotes;
+
+          case '\\':
+            if (*++yyp != '\\')
+              goto do_not_strip_quotes;
+            else
+              goto append;
+
+          append:
+          default:
+            if (yyres)
+              yyres[yyn] = *yyp;
+            yyn++;
+            break;
+
+          case '"':
+            if (yyres)
+              yyres[yyn] = '\0';
+            return yyn;
+          }
+    do_not_strip_quotes: ;
+    }
+
+  if (yyres)
+    return yystpcpy (yyres, yystr) - yyres;
+  else
+    return yystrlen (yystr);
+}
+#endif
+
+
+static int
+yy_syntax_error_arguments (const yypcontext_t *yyctx,
+                           yysymbol_kind_t yyarg[], int yyargn)
+{
+  /* Actual size of YYARG. */
+  int yycount = 0;
+  /* There are many possibilities here to consider:
+     - If this state is a consistent state with a default action, then
+       the only way this function was invoked is if the default action
+       is an error action.  In that case, don't check for expected
+       tokens because there are none.
+     - The only way there can be no lookahead present (in yychar) is if
+       this state is a consistent state with a default action.  Thus,
+       detecting the absence of a lookahead is sufficient to determine
+       that there is no unexpected or expected token to report.  In that
+       case, just report a simple "syntax error".
+     - Don't assume there isn't a lookahead just because this state is a
+       consistent state with a default action.  There might have been a
+       previous inconsistent state, consistent state with a non-default
+       action, or user semantic action that manipulated yychar.
+     - Of course, the expected token list depends on states to have
+       correct lookahead information, and it depends on the parser not
+       to perform extra reductions after fetching a lookahead from the
+       scanner and before detecting a syntax error.  Thus, state merging
+       (from LALR or IELR) and default reductions corrupt the expected
+       token list.  However, the list is correct for canonical LR with
+       one exception: it will still contain any token that will not be
+       accepted due to an error action in a later state.
+  */
+  if (yyctx->yytoken != YYSYMBOL_YYEMPTY)
+    {
+      int yyn;
+      if (yyarg)
+        yyarg[yycount] = yyctx->yytoken;
+      ++yycount;
+      yyn = yypcontext_expected_tokens (yyctx,
+                                        yyarg ? yyarg + 1 : yyarg, yyargn - 1);
+      if (yyn == YYENOMEM)
+        return YYENOMEM;
+      else
+        yycount += yyn;
+    }
+  return yycount;
+}
+
+/* Copy into *YYMSG, which is of size *YYMSG_ALLOC, an error message
+   about the unexpected token YYTOKEN for the state stack whose top is
+   YYSSP.
+
+   Return 0 if *YYMSG was successfully written.  Return -1 if *YYMSG is
+   not large enough to hold the message.  In that case, also set
+   *YYMSG_ALLOC to the required number of bytes.  Return YYENOMEM if the
+   required number of bytes is too large to store.  */
+static int
+yysyntax_error (YYPTRDIFF_T *yymsg_alloc, char **yymsg,
+                const yypcontext_t *yyctx)
+{
+  enum { YYARGS_MAX = 5 };
+  /* Internationalized format string. */
+  const char *yyformat = YY_NULLPTR;
+  /* Arguments of yyformat: reported tokens (one for the "unexpected",
+     one per "expected"). */
+  yysymbol_kind_t yyarg[YYARGS_MAX];
+  /* Cumulated lengths of YYARG.  */
+  YYPTRDIFF_T yysize = 0;
+
+  /* Actual size of YYARG. */
+  int yycount = yy_syntax_error_arguments (yyctx, yyarg, YYARGS_MAX);
+  if (yycount == YYENOMEM)
+    return YYENOMEM;
+
+  switch (yycount)
+    {
+#define YYCASE_(N, S)                       \
+      case N:                               \
+        yyformat = S;                       \
+        break
+    default: /* Avoid compiler warnings. */
+      YYCASE_(0, YY_("syntax error"));
+      YYCASE_(1, YY_("syntax error, unexpected %s"));
+      YYCASE_(2, YY_("syntax error, unexpected %s, expecting %s"));
+      YYCASE_(3, YY_("syntax error, unexpected %s, expecting %s or %s"));
+      YYCASE_(4, YY_("syntax error, unexpected %s, expecting %s or %s or %s"));
+      YYCASE_(5, YY_("syntax error, unexpected %s, expecting %s or %s or %s or %s"));
+#undef YYCASE_
+    }
+
+  /* Compute error message size.  Don't count the "%s"s, but reserve
+     room for the terminator.  */
+  yysize = yystrlen (yyformat) - 2 * yycount + 1;
+  {
+    int yyi;
+    for (yyi = 0; yyi < yycount; ++yyi)
+      {
+        YYPTRDIFF_T yysize1
+          = yysize + yytnamerr (YY_NULLPTR, yytname[yyarg[yyi]]);
+        if (yysize <= yysize1 && yysize1 <= YYSTACK_ALLOC_MAXIMUM)
+          yysize = yysize1;
+        else
+          return YYENOMEM;
+      }
+  }
+
+  if (*yymsg_alloc < yysize)
+    {
+      *yymsg_alloc = 2 * yysize;
+      if (! (yysize <= *yymsg_alloc
+             && *yymsg_alloc <= YYSTACK_ALLOC_MAXIMUM))
+        *yymsg_alloc = YYSTACK_ALLOC_MAXIMUM;
+      return -1;
+    }
+
+  /* Avoid sprintf, as that infringes on the user's name space.
+     Don't have undefined behavior even if the translation
+     produced a string with the wrong number of "%s"s.  */
+  {
+    char *yyp = *yymsg;
+    int yyi = 0;
+    while ((*yyp = *yyformat) != '\0')
+      if (*yyp == '%' && yyformat[1] == 's' && yyi < yycount)
+        {
+          yyp += yytnamerr (yyp, yytname[yyarg[yyi++]]);
+          yyformat += 2;
+        }
+      else
+        {
+          ++yyp;
+          ++yyformat;
+        }
+  }
+  return 0;
+}
 
 
 /*-----------------------------------------------.
@@ -978,10 +1176,9 @@ int yydebug;
 
 static void
 yydestruct (const char *yymsg,
-            yysymbol_kind_t yykind, YYSTYPE *yyvaluep, YYLTYPE *yylocationp)
+            yysymbol_kind_t yykind, YYSTYPE *yyvaluep)
 {
   YY_USE (yyvaluep);
-  YY_USE (yylocationp);
   if (!yymsg)
     yymsg = "Deleting";
   YY_SYMBOL_PRINT (yymsg, yykind, yyvaluep, yylocationp);
@@ -992,54 +1189,86 @@ yydestruct (const char *yymsg,
 }
 
 
+
+
+
+#define yynerrs yyps->yynerrs
+#define yystate yyps->yystate
+#define yyerrstatus yyps->yyerrstatus
+#define yyssa yyps->yyssa
+#define yyss yyps->yyss
+#define yyssp yyps->yyssp
+#define yyvsa yyps->yyvsa
+#define yyvs yyps->yyvs
+#define yyvsp yyps->yyvsp
+#define yystacksize yyps->yystacksize
+
+/* Initialize the parser data structure.  */
+static void
+yypstate_clear (yypstate *yyps)
+{
+  yynerrs = 0;
+  yystate = 0;
+  yyerrstatus = 0;
+
+  yyssp = yyss;
+  yyvsp = yyvs;
+
+  /* Initialize the state stack, in case yypcontext_expected_tokens is
+     called before the first call to yyparse. */
+  *yyssp = 0;
+  yyps->yynew = 1;
+}
+
+/* Initialize the parser data structure.  */
+yypstate *
+yypstate_new (void)
+{
+  yypstate *yyps;
+  yyps = YY_CAST (yypstate *, YYMALLOC (sizeof *yyps));
+  if (!yyps)
+    return YY_NULLPTR;
+  yystacksize = YYINITDEPTH;
+  yyss = yyssa;
+  yyvs = yyvsa;
+  yypstate_clear (yyps);
+  return yyps;
+}
+
+void
+yypstate_delete (yypstate *yyps)
+{
+  if (yyps)
+    {
+#ifndef yyoverflow
+      /* If the stack was reallocated but the parse did not complete, then the
+         stack still needs to be freed.  */
+      if (yyss != yyssa)
+        YYSTACK_FREE (yyss);
+#endif
+      YYFREE (yyps);
+    }
+}
+
+
+
+/*---------------.
+| yypush_parse.  |
+`---------------*/
+
+int
+yypush_parse (yypstate *yyps,
+              int yypushed_char, YYSTYPE const *yypushed_val)
+{
 /* Lookahead token kind.  */
 int yychar;
 
+
 /* The semantic value of the lookahead symbol.  */
-YYSTYPE yylval;
-/* Location data for the lookahead symbol.  */
-YYLTYPE yylloc
-# if defined YYLTYPE_IS_TRIVIAL && YYLTYPE_IS_TRIVIAL
-  = { 1, 1, 1, 1 }
-# endif
-;
-/* Number of syntax errors so far.  */
-int yynerrs;
-
-
-
-
-/*----------.
-| yyparse.  |
-`----------*/
-
-int
-yyparse (void)
-{
-    yy_state_fast_t yystate = 0;
-    /* Number of tokens to shift before error messages enabled.  */
-    int yyerrstatus = 0;
-
-    /* Refer to the stacks through separate pointers, to allow yyoverflow
-       to reallocate them elsewhere.  */
-
-    /* Their size.  */
-    YYPTRDIFF_T yystacksize = YYINITDEPTH;
-
-    /* The state stack: array, bottom, top.  */
-    yy_state_t yyssa[YYINITDEPTH];
-    yy_state_t *yyss = yyssa;
-    yy_state_t *yyssp = yyss;
-
-    /* The semantic value stack: array, bottom, top.  */
-    YYSTYPE yyvsa[YYINITDEPTH];
-    YYSTYPE *yyvs = yyvsa;
-    YYSTYPE *yyvsp = yyvs;
-
-    /* The location stack: array, bottom, top.  */
-    YYLTYPE yylsa[YYINITDEPTH];
-    YYLTYPE *yyls = yylsa;
-    YYLTYPE *yylsp = yyls;
+/* Default value used for initialization, for pacifying older GCCs
+   or non-GCC compilers.  */
+YY_INITIAL_VALUE (static YYSTYPE yyval_default;)
+YYSTYPE yylval YY_INITIAL_VALUE (= yyval_default);
 
   int yyn;
   /* The return value of yyparse.  */
@@ -1049,24 +1278,36 @@ yyparse (void)
   /* The variables used to return semantic value and location from the
      action routines.  */
   YYSTYPE yyval;
-  YYLTYPE yyloc;
 
-  /* The locations where the error started and ended.  */
-  YYLTYPE yyerror_range[3];
+  /* Buffer for error messages, and its allocated size.  */
+  char yymsgbuf[128];
+  char *yymsg = yymsgbuf;
+  YYPTRDIFF_T yymsg_alloc = sizeof yymsgbuf;
 
-
-
-#define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N), yylsp -= (N))
+#define YYPOPSTACK(N)   (yyvsp -= (N), yyssp -= (N))
 
   /* The number of symbols on the RHS of the reduced rule.
      Keep to zero when no symbol should be popped.  */
   int yylen = 0;
 
+  switch (yyps->yynew)
+    {
+    case 0:
+      yyn = yypact[yystate];
+      goto yyread_pushed_token;
+
+    case 2:
+      yypstate_clear (yyps);
+      break;
+
+    default:
+      break;
+    }
+
   YYDPRINTF ((stderr, "Starting parse\n"));
 
   yychar = YYEMPTY; /* Cause a token to be read.  */
 
-  yylsp[0] = yylloc;
   goto yysetstate;
 
 
@@ -1105,7 +1346,6 @@ yysetstate:
            memory.  */
         yy_state_t *yyss1 = yyss;
         YYSTYPE *yyvs1 = yyvs;
-        YYLTYPE *yyls1 = yyls;
 
         /* Each stack pointer address is followed by the size of the
            data in use in that stack, in bytes.  This used to be a
@@ -1114,11 +1354,9 @@ yysetstate:
         yyoverflow (YY_("memory exhausted"),
                     &yyss1, yysize * YYSIZEOF (*yyssp),
                     &yyvs1, yysize * YYSIZEOF (*yyvsp),
-                    &yyls1, yysize * YYSIZEOF (*yylsp),
                     &yystacksize);
         yyss = yyss1;
         yyvs = yyvs1;
-        yyls = yyls1;
       }
 # else /* defined YYSTACK_RELOCATE */
       /* Extend the stack our own way.  */
@@ -1137,7 +1375,6 @@ yysetstate:
           YYNOMEM;
         YYSTACK_RELOCATE (yyss_alloc, yyss);
         YYSTACK_RELOCATE (yyvs_alloc, yyvs);
-        YYSTACK_RELOCATE (yyls_alloc, yyls);
 #  undef YYSTACK_RELOCATE
         if (yyss1 != yyssa)
           YYSTACK_FREE (yyss1);
@@ -1146,7 +1383,6 @@ yysetstate:
 
       yyssp = yyss + yysize - 1;
       yyvsp = yyvs + yysize - 1;
-      yylsp = yyls + yysize - 1;
 
       YY_IGNORE_USELESS_CAST_BEGIN
       YYDPRINTF ((stderr, "Stack size increased to %ld\n",
@@ -1182,8 +1418,18 @@ yybackup:
   /* YYCHAR is either empty, or end-of-input, or a valid lookahead.  */
   if (yychar == YYEMPTY)
     {
+      if (!yyps->yynew)
+        {
+          YYDPRINTF ((stderr, "Return for a new token:\n"));
+          yyresult = YYPUSH_MORE;
+          goto yypushreturn;
+        }
+      yyps->yynew = 0;
+yyread_pushed_token:
       YYDPRINTF ((stderr, "Reading a token\n"));
-      yychar = yylex ();
+      yychar = yypushed_char;
+      if (yypushed_val)
+        yylval = *yypushed_val;
     }
 
   if (yychar <= YYEOF)
@@ -1200,7 +1446,6 @@ yybackup:
          loop in error recovery. */
       yychar = YYUNDEF;
       yytoken = YYSYMBOL_YYerror;
-      yyerror_range[1] = yylloc;
       goto yyerrlab1;
     }
   else
@@ -1234,7 +1479,6 @@ yybackup:
   YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
   *++yyvsp = yylval;
   YY_IGNORE_MAYBE_UNINITIALIZED_END
-  *++yylsp = yylloc;
 
   /* Discard the shifted token.  */
   yychar = YYEMPTY;
@@ -1268,225 +1512,468 @@ yyreduce:
      GCC warning that YYVAL may be used uninitialized.  */
   yyval = yyvsp[1-yylen];
 
-  /* Default location. */
-  YYLLOC_DEFAULT (yyloc, (yylsp - yylen), yylen);
-  yyerror_range[1] = yyloc;
+
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-  case 2: /* goal: program  */
-#line 86 "src/files/frontend/parser.y"
-            { }
-#line 1281 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
-    break;
-
-  case 3: /* program: program statement  */
-#line 89 "src/files/frontend/parser.y"
-                      {(yyval.str) = new std::string(*(yyvsp[-1].str) + *(yyvsp[0].str));
-                      goalStr = new std::string(*(yyval.str));
-                      delete (yyvsp[-1].str); delete (yyvsp[0].str); 
-                      //std::cout<< *$$ <<std::endl;
-                       }
-#line 1291 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
-    break;
-
-  case 4: /* program: statement  */
-#line 94 "src/files/frontend/parser.y"
-              { (yyval.str) = new std::string(*(yyvsp[0].str)); delete (yyvsp[0].str); //std::cout<< *$$ <<std::endl;
-                      }
-#line 1298 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
-    break;
-
-  case 5: /* statement: conditional  */
+  case 2: /* program: statements  */
 #line 99 "src/files/frontend/parser.y"
-                {(yyval.str) = new std::string(*(yyvsp[0].str)); delete (yyvsp[0].str); }
-#line 1304 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+               {
+        auto statementBlock = std::unique_ptr<ASTStatementBlock>();
+        statementBlock->statements = *(yyvsp[0].stmt);
+
+        for (auto &stmt : statementBlock->statements)
+        {
+            ast.AddStatement(std::move(stmt));
+        }
+
+
+    }
+#line 1533 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 6: /* statement: DEDENT conditional statement DEDENT DEDENT  */
-#line 100 "src/files/frontend/parser.y"
-                                               { (yyval.str) = new std::string("} " + *(yyvsp[-3].str) + "\n" + *(yyvsp[-2].str) + "}\n}\n"); delete (yyvsp[-3].str); delete (yyvsp[-2].str);}
-#line 1310 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
-    break;
-
-  case 7: /* statement: DEDENT  */
-#line 101 "src/files/frontend/parser.y"
-           { (yyval.str) = new std::string("}"); }
-#line 1316 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
-    break;
-
-  case 8: /* statement: INDENT statement  */
-#line 102 "src/files/frontend/parser.y"
-                     {(yyval.str) = new std::string(*(yyvsp[0].str)); delete (yyvsp[0].str); }
-#line 1322 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
-    break;
-
-  case 9: /* statement: INDENT statement INDENT statement  */
-#line 103 "src/files/frontend/parser.y"
-                                      { std::cerr << "Error:"<< "Indentation error"<< std::endl; exit(1); delete (yyvsp[-2].str); delete (yyvsp[0].str); }
-#line 1328 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
-    break;
-
-  case 10: /* statement: INDENT flowcontrol NEWLINE DEDENT DEDENT  */
-#line 104 "src/files/frontend/parser.y"
-                                             { (yyval.str) = new std::string(*(yyvsp[-3].str) + "; \n}\n}\n"); delete (yyvsp[-3].str); }
-#line 1334 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
-    break;
-
-  case 11: /* statement: IDENTIFIER EQUALS expression NEWLINE  */
-#line 105 "src/files/frontend/parser.y"
-                                         { (yyval.str) = new std::string(*(yyvsp[-3].str) +" = "+ *(yyvsp[-1].str) + "; \n");
-                                          characters.push_back(*(yyvsp[-3].str));
-                                          //std::cout<< *$$ <<"HERE" << std::endl;
-                                          delete (yyvsp[-3].str); delete (yyvsp[-1].str); 
-                                          }
-#line 1344 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
-    break;
-
-  case 12: /* expression: INTEGER  */
+  case 3: /* statements: statement  */
 #line 113 "src/files/frontend/parser.y"
-            { (yyval.str) = (yyvsp[0].str); }
-#line 1350 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+              { 
+        BlockNode* result = new BlockNode(std::string("temp"));
+        result->childs.push_back((yyvsp[0].stmt));
+        (yyval.stmt) = result;
+    }
+#line 1543 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 13: /* expression: FLOAT  */
-#line 114 "src/files/frontend/parser.y"
-          { (yyval.str) = (yyvsp[0].str); }
-#line 1356 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 4: /* statements: statements statement  */
+#line 118 "src/files/frontend/parser.y"
+                         { 
+        BlockNode* result = new BlockNode(std::string("temp"));
+        BlockNode* tmp1 = dynamic_cast<BlockNode*>((yyvsp[-1].stmt));
+        /* BlockNode* tmp2 = dynamic_cast<BlockNode*>($2); */
+
+        /* Bring all the childs of $1 to $$ */
+        std::vector<ASTNode*>::iterator it;
+        for (it = tmp1->childs.begin(); it != tmp1->childs.end(); ++it) {
+            result->childs.push_back((*it));
+        }
+        result->childs.push_back((yyvsp[0].stmt));
+        (yyval.stmt) = result;
+    }
+#line 1561 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 14: /* expression: BOOLEAN  */
-#line 115 "src/files/frontend/parser.y"
-            { (yyval.str) = (yyvsp[0].str); }
-#line 1362 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 5: /* statement: assign_statement  */
+#line 134 "src/files/frontend/parser.y"
+                     { 
+        (yyval.stmt) = (yyvsp[0].stmt);
+    }
+#line 1569 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 15: /* expression: IDENTIFIER  */
-#line 116 "src/files/frontend/parser.y"
-               { (yyval.str) = (yyvsp[0].str); }
-#line 1368 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 6: /* statement: if_statement  */
+#line 137 "src/files/frontend/parser.y"
+                 { 
+        (yyval.stmt) = (yyvsp[0].stmt);
+    }
+#line 1577 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 16: /* expression: LPAREN expression RPAREN  */
-#line 117 "src/files/frontend/parser.y"
-                             {  (yyval.str) = new std::string("(" + *(yyvsp[-1].str) + ")"); delete (yyvsp[-1].str);}
-#line 1374 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 7: /* statement: while_statement  */
+#line 140 "src/files/frontend/parser.y"
+                    {  
+        (yyval.stmt) = (yyvsp[0].stmt);
+    }
+#line 1585 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 8: /* statement: break_statement  */
+#line 143 "src/files/frontend/parser.y"
+                    { 
+        (yyval.stmt) = (yyvsp[0].stmt);
+  }
+#line 1593 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 9: /* primary_expression: IDENTIFIER  */
+#line 149 "src/files/frontend/parser.y"
+               { 
+        std::string name = "iden" + std::to_string(n_nodes);
+        ++n_nodes;
+        (yyval.exp) = new LiteralNode(name, "Identifier", *(yyvsp[0].strval));
+    }
+#line 1603 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 10: /* primary_expression: FLOAT  */
+#line 154 "src/files/frontend/parser.y"
+          { 
+        std::string name = "float" + std::to_string(n_nodes);
+        ++n_nodes;
+        (yyval.exp) = new LiteralNode(name, "Float", *(yyvsp[0].strval));
+    }
+#line 1613 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 11: /* primary_expression: INTEGER  */
+#line 159 "src/files/frontend/parser.y"
+            { 
+        std::string name = "integer" + std::to_string(n_nodes);
+        ++n_nodes;
+        (yyval.exp) = new LiteralNode(name, "Integer", *(yyvsp[0].strval));
+    }
+#line 1623 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 12: /* primary_expression: BOOLEAN  */
+#line 164 "src/files/frontend/parser.y"
+            { 
+        std::string name = "bool" + std::to_string(n_nodes);
+        ++n_nodes;
+        (yyval.exp) = new LiteralNode(name, "Boolean", *(yyvsp[0].strval));
+    }
+#line 1633 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 13: /* primary_expression: LPAREN expression RPAREN  */
+#line 169 "src/files/frontend/parser.y"
+                             { 
+        std::string name = "paren" + std::to_string(n_nodes);
+        ++n_nodes;
+        UnaryNode* result = new UnaryNode(name, "Paren");
+        result->child = (yyvsp[-1].exp);
+        (yyval.exp) = result;
+    }
+#line 1645 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 14: /* negated_expression: NOT primary_expression  */
+#line 179 "src/files/frontend/parser.y"
+                           { 
+        std::string name = "not" + std::to_string(n_nodes);
+        ++n_nodes;
+        UnaryNode* result = new UnaryNode(name, "NOT");
+        result->child = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1657 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 15: /* expression: primary_expression  */
+#line 189 "src/files/frontend/parser.y"
+                       { 
+        (yyval.exp) = (yyvsp[0].exp); 
+    }
+#line 1665 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 16: /* expression: negated_expression  */
+#line 192 "src/files/frontend/parser.y"
+                       { 
+        (yyval.exp) = (yyvsp[0].exp); 
+    }
+#line 1673 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
   case 17: /* expression: expression PLUS expression  */
-#line 118 "src/files/frontend/parser.y"
-                               { (yyval.str) =  new std::string(*(yyvsp[-2].str) + " + " + *(yyvsp[0].str)); delete (yyvsp[-2].str); delete (yyvsp[0].str);}
-#line 1380 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+#line 195 "src/files/frontend/parser.y"
+                               { 
+        std::string name = "plus" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "PLUS");
+        result->left = (yyvsp[-2].exp);
+        result->right = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1686 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
   case 18: /* expression: expression MINUS expression  */
-#line 119 "src/files/frontend/parser.y"
-                                { (yyval.str) =  new std::string(*(yyvsp[-2].str) + " - " + *(yyvsp[0].str)); delete (yyvsp[-2].str); delete (yyvsp[0].str);}
-#line 1386 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+#line 203 "src/files/frontend/parser.y"
+                                { 
+        std::string name = "minus" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "MINUS");
+        result->left = (yyvsp[-2].exp);
+        result->right = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1699 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
   case 19: /* expression: expression TIMES expression  */
-#line 120 "src/files/frontend/parser.y"
-                                { (yyval.str) =  new std::string(*(yyvsp[-2].str) + " * " + *(yyvsp[0].str)); delete (yyvsp[-2].str); delete (yyvsp[0].str);}
-#line 1392 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+#line 211 "src/files/frontend/parser.y"
+                                { 
+        std::string name = "times" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "TIMES");
+        result->left = (yyvsp[-2].exp);
+        result->right = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1712 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
   case 20: /* expression: expression DIVIDEDBY expression  */
-#line 121 "src/files/frontend/parser.y"
-                                    { (yyval.str) =  new std::string(*(yyvsp[-2].str) + " / " + *(yyvsp[0].str)); delete (yyvsp[-2].str); delete (yyvsp[0].str);}
-#line 1398 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+#line 219 "src/files/frontend/parser.y"
+                                    { 
+        std::string name = "dividedby" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "DEVIDEDBY");
+        result->left = (yyvsp[-2].exp);
+        result->right = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1725 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 21: /* conditionalExpr: IDENTIFIER  */
-#line 125 "src/files/frontend/parser.y"
-               { (yyval.str) = (yyvsp[0].str); }
-#line 1404 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 21: /* expression: expression EQ expression  */
+#line 227 "src/files/frontend/parser.y"
+                             { 
+        std::string name = "eq" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "EQ");
+        result->left = (yyvsp[-2].exp);
+        result->right = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1738 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 22: /* conditionalExpr: INTEGER  */
-#line 126 "src/files/frontend/parser.y"
-            { (yyval.str) = (yyvsp[0].str); }
-#line 1410 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 22: /* expression: expression NEQ expression  */
+#line 235 "src/files/frontend/parser.y"
+                              { 
+        std::string name = "neq" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "NEQ");
+        result->left = (yyvsp[-2].exp);
+        result->right = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1751 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 23: /* conditionalExpr: FLOAT  */
-#line 127 "src/files/frontend/parser.y"
-          { (yyval.str) = (yyvsp[0].str); }
-#line 1416 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 23: /* expression: expression GT expression  */
+#line 243 "src/files/frontend/parser.y"
+                             { 
+        std::string name = "gt" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "GT");
+        result->left = (yyvsp[-2].exp);
+        result->right = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1764 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 24: /* conditionalExpr: BOOLEAN  */
-#line 128 "src/files/frontend/parser.y"
-            { (yyval.str) = (yyvsp[0].str); }
-#line 1422 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 24: /* expression: expression GTE expression  */
+#line 251 "src/files/frontend/parser.y"
+                              { 
+        std::string name = "gte" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "GTE");
+        result->left = (yyvsp[-2].exp);
+        result->right = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1777 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 25: /* conditionalExpr: conditionalExpr LT conditionalExpr  */
-#line 129 "src/files/frontend/parser.y"
-                                       { (yyval.str) = new std::string(*(yyvsp[-2].str) + " < " + *(yyvsp[0].str));  delete (yyvsp[-2].str); delete (yyvsp[0].str);}
-#line 1428 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 25: /* expression: expression LT expression  */
+#line 259 "src/files/frontend/parser.y"
+                             { 
+        std::string name = "lt" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "LT");
+        result->left = (yyvsp[-2].exp);
+        result->right = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1790 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 26: /* conditionalExpr: conditionalExpr GT conditionalExpr  */
-#line 130 "src/files/frontend/parser.y"
-                                       { 
-                                        (yyval.str) = new std::string(*(yyvsp[-2].str) + " > " + *(yyvsp[0].str));
-                                        delete (yyvsp[-2].str); delete (yyvsp[0].str);
-                                      }
-#line 1437 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 26: /* expression: expression LTE expression  */
+#line 267 "src/files/frontend/parser.y"
+                              { 
+        std::string name = "lte" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "LTE");
+        result->left = (yyvsp[-2].exp);
+        result->right = (yyvsp[0].exp);
+        (yyval.exp) = result;
+    }
+#line 1803 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 27: /* conditionalExpr: conditionalExpr LTE conditionalExpr  */
-#line 134 "src/files/frontend/parser.y"
-                                        {  (yyval.str) = new std::string(*(yyvsp[-2].str) + " <= " + *(yyvsp[0].str)); delete (yyvsp[-2].str); delete (yyvsp[0].str);}
-#line 1443 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 27: /* assign_statement: IDENTIFIER ASSIGN expression NEWLINE  */
+#line 278 "src/files/frontend/parser.y"
+                                         { 
+        std::string name = "assign" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "Assignment");
+        
+        std::string name1 = "iden" + std::to_string(n_nodes);
+        ++n_nodes;
+        LiteralNode* iden = new LiteralNode(name1, "Identifier", *(yyvsp[-3].strval));
+        result->left = iden;
+
+        result->right = (yyvsp[-1].exp);
+        (yyval.stmt) = result;
+    }
+#line 1821 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 28: /* conditionalExpr: conditionalExpr GTE conditionalExpr  */
-#line 135 "src/files/frontend/parser.y"
-                                        {  (yyval.str) = new std::string(*(yyvsp[-2].str) + " >= " + *(yyvsp[0].str)); delete (yyvsp[-2].str); delete (yyvsp[0].str);}
-#line 1449 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 28: /* block: INDENT statements DEDENT  */
+#line 294 "src/files/frontend/parser.y"
+                             { 
+        std::string name = "block" + std::to_string(n_nodes);
+        ++n_nodes;
+        BlockNode* result = new BlockNode(name);
+        BlockNode* tmp2 = dynamic_cast<BlockNode*>((yyvsp[-1].stmt));
+
+        std::vector<ASTNode*>::iterator it;
+        for (it = tmp2->childs.begin(); it != tmp2->childs.end(); ++it) {
+            result->childs.push_back((*it));
+        }
+        (yyval.stmt) = result;
+    }
+#line 1838 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 29: /* conditionalExpr: conditionalExpr NEQ conditionalExpr  */
-#line 136 "src/files/frontend/parser.y"
-                                        {  (yyval.str) = new std::string(*(yyvsp[-2].str) + " != " + *(yyvsp[0].str)); delete (yyvsp[-2].str); delete (yyvsp[0].str);}
-#line 1455 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 29: /* condition: expression  */
+#line 309 "src/files/frontend/parser.y"
+               { 
+        (yyval.stmt) = (yyvsp[0].exp); 
+    }
+#line 1846 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 30: /* conditionalExpr: conditionalExpr EQ conditionalExpr  */
-#line 137 "src/files/frontend/parser.y"
-                                       {  (yyval.str) = new std::string(*(yyvsp[-2].str) + " == " + *(yyvsp[0].str)); delete (yyvsp[-2].str); delete (yyvsp[0].str);}
-#line 1461 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 30: /* condition: condition AND condition  */
+#line 312 "src/files/frontend/parser.y"
+                            { 
+        std::string name = "and" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "AND");
+        result->left = (yyvsp[-2].stmt);
+        result->right = (yyvsp[0].stmt);
+        (yyval.stmt) = result;
+    }
+#line 1859 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 32: /* conditional: WHILE conditionalExpr COLON NEWLINE  */
-#line 142 "src/files/frontend/parser.y"
-                                        { (yyval.str) = new std::string("while (" + *(yyvsp[-2].str) + ") {\n"); delete (yyvsp[-2].str);}
-#line 1467 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 31: /* condition: condition OR condition  */
+#line 320 "src/files/frontend/parser.y"
+                           { 
+        std::string name = "or" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "OR");
+        result->left = (yyvsp[-2].stmt);
+        result->right = (yyvsp[0].stmt);
+        (yyval.stmt) = result;
+    }
+#line 1872 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 33: /* ifelse: IF conditionalExpr COLON NEWLINE  */
-#line 146 "src/files/frontend/parser.y"
-                                     {  (yyval.str) = new std::string("if(" + *(yyvsp[-2].str) + ") {\n"); delete (yyvsp[-2].str);
-                                }
-#line 1474 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 32: /* if_statement: IF condition COLON NEWLINE block elif_blocks else_block  */
+#line 331 "src/files/frontend/parser.y"
+                                                            { 
+        //$$ = new std::string("if (" + *$2 + ") " + *$5 + *$6 + *$7 + "\n"); delete $2; delete $5; delete $6; delete $7;
+        std::string name = "if" + std::to_string(n_nodes);
+        ++n_nodes;
+        IfNode* result = new IfNode(name);
+        result->condition = (yyvsp[-5].stmt);
+        result->if_block = dynamic_cast<BlockNode*>((yyvsp[-2].stmt));
+
+        /* Push bask $6 */
+        if ((yyvsp[-1].stmt) != nullptr) {
+            ElifNode* tmp6 = dynamic_cast<ElifNode*>((yyvsp[-1].stmt));
+            result->elifs.push_back(tmp6);
+            /* and push its siblings, too */
+            std::vector<ElifNode*>::iterator it;
+            for (it = tmp6->siblings.begin(); it != tmp6->siblings.end(); ++it) {
+                result->elifs.push_back((*it));
+            }
+        }
+
+        result->else_block = dynamic_cast<BlockNode*>((yyvsp[0].stmt));
+        (yyval.stmt) = result;
+    }
+#line 1899 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 34: /* ifelse: ELSE COLON NEWLINE  */
-#line 148 "src/files/frontend/parser.y"
-                       { (yyval.str) = new std::string("else {"); }
-#line 1480 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 33: /* elif_blocks: %empty  */
+#line 356 "src/files/frontend/parser.y"
+           { 
+        (yyval.stmt) = nullptr;
+    }
+#line 1907 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
-  case 35: /* flowcontrol: BREAK  */
-#line 152 "src/files/frontend/parser.y"
-          { (yyval.str) = new std::string("break"); }
-#line 1486 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+  case 34: /* elif_blocks: elif_blocks ELIF condition COLON NEWLINE block  */
+#line 359 "src/files/frontend/parser.y"
+                                                   { 
+        std::string name = "elif" + std::to_string(n_nodes);
+        ++n_nodes;
+        ElifNode* result = new ElifNode(name);
+        result->condition = (yyvsp[-3].stmt);
+        result->elif_block = dynamic_cast<BlockNode*>((yyvsp[0].stmt));
+        if ((yyvsp[-5].stmt) != nullptr) {
+            ElifNode* tmp1 = dynamic_cast<ElifNode*>((yyvsp[-5].stmt));
+            std::vector<ElifNode*>::iterator it;
+            for (it = tmp1->siblings.begin(); it != tmp1->siblings.end(); ++it) {
+                result->siblings.push_back((*it));
+            }
+        }
+        (yyval.stmt) = result;
+    }
+#line 1927 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 35: /* else_block: %empty  */
+#line 377 "src/files/frontend/parser.y"
+           { 
+        (yyval.stmt) = nullptr;
+    }
+#line 1935 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 36: /* else_block: ELSE COLON NEWLINE block  */
+#line 380 "src/files/frontend/parser.y"
+                             { 
+        /* std::string name = "block" + std::to_string(n_nodes); */
+        /* ++n_nodes; */
+        /* BlockNode* result = new BlockNode(name); */
+        /* $$ = result; */
+        (yyval.stmt) = (yyvsp[0].stmt);
+
+    }
+#line 1948 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 37: /* while_statement: WHILE condition COLON NEWLINE block  */
+#line 391 "src/files/frontend/parser.y"
+                                        { 
+        std::string name = "while" + std::to_string(n_nodes);
+        ++n_nodes;
+        BinaryNode* result = new BinaryNode(name, "While");
+        result->left = (yyvsp[-3].stmt);
+        result->right = (yyvsp[0].stmt);
+        (yyval.stmt) = result;
+    }
+#line 1961 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+    break;
+
+  case 38: /* break_statement: BREAK NEWLINE  */
+#line 402 "src/files/frontend/parser.y"
+                  { 
+        std::string name = "break" + std::to_string(n_nodes);
+        ++n_nodes;
+        UnaryNode* result = new UnaryNode(name, "Break");
+        /* result->child = nullptr; */
+        (yyval.stmt) = result;
+    }
+#line 1973 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
     break;
 
 
-#line 1490 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
+#line 1977 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/cmake-build-debug/parser.tab.cc"
 
       default: break;
     }
@@ -1507,7 +1994,6 @@ yyreduce:
   yylen = 0;
 
   *++yyvsp = yyval;
-  *++yylsp = yyloc;
 
   /* Now 'shift' the result of the reduction.  Determine what state
      that goes to, based on the state we popped back to and the rule
@@ -1534,10 +2020,39 @@ yyerrlab:
   if (!yyerrstatus)
     {
       ++yynerrs;
-      yyerror (YY_("syntax error"));
+      {
+        yypcontext_t yyctx
+          = {yyps, yytoken};
+        char const *yymsgp = YY_("syntax error");
+        int yysyntax_error_status;
+        yysyntax_error_status = yysyntax_error (&yymsg_alloc, &yymsg, &yyctx);
+        if (yysyntax_error_status == 0)
+          yymsgp = yymsg;
+        else if (yysyntax_error_status == -1)
+          {
+            if (yymsg != yymsgbuf)
+              YYSTACK_FREE (yymsg);
+            yymsg = YY_CAST (char *,
+                             YYSTACK_ALLOC (YY_CAST (YYSIZE_T, yymsg_alloc)));
+            if (yymsg)
+              {
+                yysyntax_error_status
+                  = yysyntax_error (&yymsg_alloc, &yymsg, &yyctx);
+                yymsgp = yymsg;
+              }
+            else
+              {
+                yymsg = yymsgbuf;
+                yymsg_alloc = sizeof yymsgbuf;
+                yysyntax_error_status = YYENOMEM;
+              }
+          }
+        yyerror (yymsgp);
+        if (yysyntax_error_status == YYENOMEM)
+          YYNOMEM;
+      }
     }
 
-  yyerror_range[1] = yylloc;
   if (yyerrstatus == 3)
     {
       /* If just tried and failed to reuse lookahead token after an
@@ -1552,7 +2067,7 @@ yyerrlab:
       else
         {
           yydestruct ("Error: discarding",
-                      yytoken, &yylval, &yylloc);
+                      yytoken, &yylval);
           yychar = YYEMPTY;
         }
     }
@@ -1606,9 +2121,9 @@ yyerrlab1:
       if (yyssp == yyss)
         YYABORT;
 
-      yyerror_range[1] = *yylsp;
+
       yydestruct ("Error: popping",
-                  YY_ACCESSING_SYMBOL (yystate), yyvsp, yylsp);
+                  YY_ACCESSING_SYMBOL (yystate), yyvsp);
       YYPOPSTACK (1);
       yystate = *yyssp;
       YY_STACK_PRINT (yyss, yyssp);
@@ -1618,9 +2133,6 @@ yyerrlab1:
   *++yyvsp = yylval;
   YY_IGNORE_MAYBE_UNINITIALIZED_END
 
-  yyerror_range[2] = yylloc;
-  ++yylsp;
-  YYLLOC_DEFAULT (*yylsp, yyerror_range, 2);
 
   /* Shift the error token.  */
   YY_SYMBOL_PRINT ("Shifting", YY_ACCESSING_SYMBOL (yyn), yyvsp, yylsp);
@@ -1664,7 +2176,7 @@ yyreturnlab:
          user semantic actions for why this is necessary.  */
       yytoken = YYTRANSLATE (yychar);
       yydestruct ("Cleanup: discarding lookahead",
-                  yytoken, &yylval, &yylloc);
+                  yytoken, &yylval);
     }
   /* Do not reclaim the symbols of the rule whose action triggered
      this YYABORT or YYACCEPT.  */
@@ -1673,24 +2185,32 @@ yyreturnlab:
   while (yyssp != yyss)
     {
       yydestruct ("Cleanup: popping",
-                  YY_ACCESSING_SYMBOL (+*yyssp), yyvsp, yylsp);
+                  YY_ACCESSING_SYMBOL (+*yyssp), yyvsp);
       YYPOPSTACK (1);
     }
-#ifndef yyoverflow
-  if (yyss != yyssa)
-    YYSTACK_FREE (yyss);
-#endif
+  yyps->yynew = 2;
+  goto yypushreturn;
 
+
+/*-------------------------.
+| yypushreturn -- return.  |
+`-------------------------*/
+yypushreturn:
+  if (yymsg != yymsgbuf)
+    YYSTACK_FREE (yymsg);
   return yyresult;
 }
-
-#line 155 "src/files/frontend/parser.y"
-
-```
-void yyerror(YYLTYPE* loc, const char* err) {
-  std::cerr << "Error: " << err << std::endl;
-
-}
+#undef yynerrs
+#undef yystate
+#undef yyerrstatus
+#undef yyssa
+#undef yyss
+#undef yyssp
+#undef yyvsa
+#undef yyvs
+#undef yyvsp
+#undef yystacksize
+#line 414 "src/files/frontend/parser.y"
 
 int main(int argc, char **argv) {
 
@@ -1808,3 +2328,24 @@ void yyerror(const char *s)
   fprintf(stderr, "error: %s\n", s);
 }
 
+
+// ---------
+// ASTStatementBlock
+#pragma once
+
+#include "../statement.h"
+
+/* // Sometimes we need more than a single statement, like a code block. This is the purpose of this.
+class ASTStatementBlock : public ASTStatement
+{
+public:
+
+    // List of statements. Modify these as needed :}
+    std::vector<std::unique_ptr<ASTStatement>> statements;
+
+    // Virtual functions. See base class for details.
+    std::unique_ptr<VarType> StatementReturnType(ASTFunction& func) override;
+    void Compile(llvm::Module& mod, llvm::IRBuilder<>& builder, ASTFunction& func) override;
+    std::string ToString(const std::string& prefix) override;
+
+}; */

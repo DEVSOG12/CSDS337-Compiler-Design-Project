@@ -36,7 +36,7 @@ void ASTStatementBlock::Compile(llvm::Module& mod, llvm::IRBuilder<>& builder, A
 std::string ASTStatementBlock::ToString(const std::string& prefix)
 {
     std::string output = "block\n";
-    if(statements.size() > 0) {
+    if(!statements.empty()) {
       for (int i = 0; i < statements.size() - 1; i++)
         output += prefix + "├──" + (statements.at(i) == nullptr ? "nullptr\n" : statements.at(i)->ToString(prefix + "│  "));
       output += prefix + "└──" + (statements.back() == nullptr ? "nullptr\n" : statements.back()->ToString(prefix + "   "));
