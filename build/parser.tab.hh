@@ -55,30 +55,31 @@ extern int yydebug;
 #include <variant>
 #include <iostream>
   //all of these includes are done as relative paths starting from the build/ directory, since that's where CMake places parser.tab.cc
-#include "../src/ast.h"
-#include "../src/expressions/call.h"
-#include "../src/expressions/int.h"
-#include "../src/expressions/float.h"
-#include "../src/expressions/string.h"
-#include "../src/expressions/variable.h"
-#include "../src/expressions/addition.h"
-#include "../src/expressions/subtraction.h"
-#include "../src/expressions/multiplication.h"
-#include "../src/expressions/division.h"
-#include "../src/expressions/assignment.h"
-#include "../src/expressions/comparison.h"
-#include "../src/expressions/and.h"
-#include "../src/expressions/or.h"
-#include "../src/statements/block.h"
-#include "../src/statements/while.h"
-#include "../src/statements/for.h"
-#include "../src/statements/if.h"
-#include "../src/statements/return.h"
-#include "../src/types/simple.h"
+#include "../src/files/ast.h"
+#include "../src/files/expressions/call.h"
+#include "../src/files/expressions/int.h"
+#include "../src/files/expressions/float.h"
+#include "../src/files/expressions/string.h"
+#include "../src/files/expressions/bool.h"
+#include "../src/files/expressions/variable.h"
+#include "../src/files/expressions/addition.h"
+#include "../src/files/expressions/subtraction.h"
+#include "../src/files/expressions/multiplication.h"
+#include "../src/files/expressions/division.h"
+#include "../src/files/expressions/assignment.h"
+#include "../src/files/expressions/comparison.h"
+#include "../src/files/expressions/and.h"
+#include "../src/files/expressions/or.h"
+#include "../src/files/statements/block.h"
+#include "../src/files/statements/while.h"
+#include "../src/files/statements/for.h"
+#include "../src/files/statements/if.h"
+#include "../src/files/statements/return.h"
+#include "../src/files/types/simple.h"
 extern FILE *yyin;
  
 
-#line 82 "/mnt/c/Users/killc/OneDrive/Desktop/PG4-1/PG4/build/parser.tab.hh"
+#line 83 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.hh"
 
 /* Token kinds.  */
 #ifndef YYTOKENTYPE
@@ -89,45 +90,55 @@ extern FILE *yyin;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    FOR = 258,                     /* FOR  */
-    ID = 259,                      /* ID  */
-    BOOL_TYPE = 260,               /* BOOL_TYPE  */
-    INT_TYPE = 261,                /* INT_TYPE  */
-    FLOAT_TYPE = 262,              /* FLOAT_TYPE  */
-    STRING_TYPE = 263,             /* STRING_TYPE  */
-    VOID_TYPE = 264,               /* VOID_TYPE  */
-    SEMICOLON = 265,               /* SEMICOLON  */
-    LPAREN = 266,                  /* LPAREN  */
-    RPAREN = 267,                  /* RPAREN  */
-    COMMA = 268,                   /* COMMA  */
-    LBRACE = 269,                  /* LBRACE  */
-    RBRACE = 270,                  /* RBRACE  */
-    IF = 271,                      /* IF  */
-    ELSE = 272,                    /* ELSE  */
-    WHILE = 273,                   /* WHILE  */
-    BREAK = 274,                   /* BREAK  */
-    RETURN = 275,                  /* RETURN  */
-    EQUALS_SIGN = 276,             /* EQUALS_SIGN  */
-    LOGICAL_OR = 277,              /* LOGICAL_OR  */
-    LOGICAL_AND = 278,             /* LOGICAL_AND  */
-    LOGICAL_NOT = 279,             /* LOGICAL_NOT  */
-    RELOP_GT = 280,                /* RELOP_GT  */
-    RELOP_LT = 281,                /* RELOP_LT  */
-    RELOP_GE = 282,                /* RELOP_GE  */
-    RELOP_LE = 283,                /* RELOP_LE  */
-    RELOP_EQ = 284,                /* RELOP_EQ  */
-    RELOP_NE = 285,                /* RELOP_NE  */
-    ARITH_PLUS = 286,              /* ARITH_PLUS  */
-    ARITH_MINUS = 287,             /* ARITH_MINUS  */
-    ARITH_MULT = 288,              /* ARITH_MULT  */
-    ARITH_DIV = 289,               /* ARITH_DIV  */
-    ARITH_MOD = 290,               /* ARITH_MOD  */
-    VARIADIC = 291,                /* VARIADIC  */
-    BOOL_LITERAL = 292,            /* BOOL_LITERAL  */
-    INT_LITERAL = 293,             /* INT_LITERAL  */
-    FLOAT_LITERAL = 294,           /* FLOAT_LITERAL  */
-    STRING_LITERAL = 295,          /* STRING_LITERAL  */
-    EOL = 296                      /* EOL  */
+    NAME = 258,                    /* NAME  */
+    NEWLINE = 259,                 /* NEWLINE  */
+    INDENT = 260,                  /* INDENT  */
+    DEDENT = 261,                  /* DEDENT  */
+    COLON = 262,                   /* COLON  */
+    PRINT = 263,                   /* PRINT  */
+    FOR = 264,                     /* FOR  */
+    ID = 265,                      /* ID  */
+    BOOL_TYPE = 266,               /* BOOL_TYPE  */
+    INT_TYPE = 267,                /* INT_TYPE  */
+    FLOAT_TYPE = 268,              /* FLOAT_TYPE  */
+    STRING_TYPE = 269,             /* STRING_TYPE  */
+    VOID_TYPE = 270,               /* VOID_TYPE  */
+    SEMICOLON = 271,               /* SEMICOLON  */
+    LPAREN = 272,                  /* LPAREN  */
+    RPAREN = 273,                  /* RPAREN  */
+    COMMA = 274,                   /* COMMA  */
+    LBRACE = 275,                  /* LBRACE  */
+    RBRACE = 276,                  /* RBRACE  */
+    IF = 277,                      /* IF  */
+    ELIF = 278,                    /* ELIF  */
+    ASSIGNMENT = 279,              /* ASSIGNMENT  */
+    TAB = 280,                     /* TAB  */
+    ELSE = 281,                    /* ELSE  */
+    WHILE = 282,                   /* WHILE  */
+    BREAK = 283,                   /* BREAK  */
+    RETURN = 284,                  /* RETURN  */
+    EQUALS_SIGN = 285,             /* EQUALS_SIGN  */
+    LOGICAL_OR = 286,              /* LOGICAL_OR  */
+    LOGICAL_AND = 287,             /* LOGICAL_AND  */
+    LOGICAL_NOT = 288,             /* LOGICAL_NOT  */
+    RELOP_GT = 289,                /* RELOP_GT  */
+    RELOP_LT = 290,                /* RELOP_LT  */
+    RELOP_GE = 291,                /* RELOP_GE  */
+    RELOP_LE = 292,                /* RELOP_LE  */
+    RELOP_EQ = 293,                /* RELOP_EQ  */
+    RELOP_NE = 294,                /* RELOP_NE  */
+    ARITH_PLUS = 295,              /* ARITH_PLUS  */
+    ARITH_MINUS = 296,             /* ARITH_MINUS  */
+    ARITH_MULT = 297,              /* ARITH_MULT  */
+    ARITH_DIV = 298,               /* ARITH_DIV  */
+    ARITH_MOD = 299,               /* ARITH_MOD  */
+    VARIADIC = 300,                /* VARIADIC  */
+    BOOL_LITERAL = 301,            /* BOOL_LITERAL  */
+    INT_LITERAL = 302,             /* INT_LITERAL  */
+    FLOAT_LITERAL = 303,           /* FLOAT_LITERAL  */
+    STRING_LITERAL = 304,          /* STRING_LITERAL  */
+    EOL = 305,                     /* EOL  */
+    DEF = 306                      /* DEF  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -136,7 +147,7 @@ extern FILE *yyin;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 50 "src/frontend/parser.y"
+#line 58 "src/files/frontend/parser.y"
 
   bool boolval;
   int intval;
@@ -151,8 +162,9 @@ union YYSTYPE
   std::vector<ASTExpression *> *exprVec;
   VarType *type;
   ASTExpressionComparisonType rel;
+  ASTStatementBlock *stmtBlock;
 
-#line 156 "/mnt/c/Users/killc/OneDrive/Desktop/PG4-1/PG4/build/parser.tab.hh"
+#line 168 "/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build/parser.tab.hh"
 
 };
 typedef union YYSTYPE YYSTYPE;

@@ -1,0 +1,32 @@
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build
+[  2%] [BISON][Parser] Building parser with bison 3.8.2
+src/files/frontend/parser.y:33.1-6: error: unexpected identifier
+   33 | extern FILE *yyin;
+      | ^~~~~~
+src/files/frontend/parser.y:33.13: error: invalid character: ‘*’
+   33 | extern FILE *yyin;
+      |             ^
+src/files/frontend/parser.y:305.12-306.0: error: missing ‘"’ at end of line
+  305 |     printf("-fAst           Output
+      |            ^~~~~~~~~~~~~~~~~~~~~~~
+src/files/frontend/parser.y:307.38-308.0: error: missing ‘"’ at end of line
+  307 |  format is an abstract syntax tree.\n");
+      |                                      ^~~
+make[2]: *** [parser.tab.cc] Error 1
+make[1]: *** [CMakeFiles/LLVM-Lab.dir/all] Error 2
+make: *** [all] Error 2
+Running -i tests/simple.py -fAsm -o tests/simple.ll
+INFO: Adding function main.
+Found popping dedent from 3
+No statements
+INFO: Defining function main.
+INFO: Compiling function main.
+INFO: Compiling function main.
+INFO: Setting parameter names for function main.
+Type of func: NSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+TestMod
+└──main
+   └──block
+

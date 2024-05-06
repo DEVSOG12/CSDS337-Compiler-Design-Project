@@ -1,0 +1,86 @@
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build
+[  2%] [BISON][Parser] Building parser with bison 3.8.2
+src/files/frontend/parser.y:33.1-6: error: unexpected identifier
+   33 | extern FILE *yyin;
+      | ^~~~~~
+src/files/frontend/parser.y:33.13: error: invalid character: ‘*’
+   33 | extern FILE *yyin;
+      |             ^
+src/files/frontend/parser.y:305.12-306.0: error: missing ‘"’ at end of line
+  305 |     printf("-fAst           Output
+      |            ^~~~~~~~~~~~~~~~~~~~~~~
+src/files/frontend/parser.y:307.38-308.0: error: missing ‘"’ at end of line
+  307 |  format is an abstract syntax tree.\n");
+      |                                      ^~~
+make[2]: *** [parser.tab.cc] Error 1
+make[1]: *** [CMakeFiles/LLVM-Lab.dir/all] Error 2
+make: *** [all] Error 2
+Running -i tests/while.py -fAsm -o tests/while.ll
+INFO: Adding function main.
+Found identifier i
+No statements
+Found newline --- 
+Assignment
+Value: 0
+Found Statement
+Found identifier i
+Found newline --- 
+Found pushing indent from 1
+Indent size: 4
+No statements
+Found identifier i
+Found identifier i
+Found newline --- 
+Assignment
+Value: (+)├──i└──1
+Found Statement
+Found identifier i
+Print statement
+Value: i
+
+INFO: Adding function printf.
+INFO: Adding parameter str.
+Found newline --- 
+Found Statement
+Found popping dedent from 3
+Found popping dedent from 2
+Found Statement
+Found popping dedent from 3
+INFO: Defining function main.
+INFO: Compiling function printf.
+INFO: Compiling function printf.
+INFO: Setting parameter names for function printf.
+Type of func: NSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+INFO: Compiling function main.
+INFO: Compiling function main.
+INFO: Setting parameter names for function main.
+INFO: Allocating stack variable i.
+IntType
+IntType
+Calling function with 2 arguments
+Checking argument 0
+Type of func: NSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE
+TestMod
+├──main
+│  └──block
+│     ├──(=)
+│     │  ├──i
+│     │  └──0
+│     └──while
+│        ├──(<)
+│        │  ├──i
+│        │  └──10
+│        └──block
+│           ├──(=)
+│           │  ├──i
+│           │  └──(+)
+│           │     ├──i
+│           │     └──1
+│           └──printf
+│              ├──"%d\n"
+│              └──i
+└──printf
+   └──nullptr
+

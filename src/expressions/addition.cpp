@@ -7,7 +7,14 @@ std::unique_ptr<VarType> ASTExpressionAddition::ReturnType(ASTFunction& func)
         if (!ASTExpression::CoerceMathTypes(func, a1, a2, returnType)) // This will force our arguments to be the same type and outputs which one it is.
             throw std::runtime_error("ERROR: Can not coerce types in addition expression! Are they both either ints or floats?");
     }
-    return std::make_unique<VarTypeSimple>(*returnType); // Make a copy of our return type :}
+
+
+    // switch on type and print the type
+    auto r = std::make_unique<VarTypeSimple>(*returnType);
+    if (r->Equals(&VarTypeSimple::IntType)) printf("IntType\n");
+    else if (r->Equals(&VarTypeSimple::FloatType)) printf("FloatType\n");
+
+    return r;
 }
 
 bool ASTExpressionAddition::IsLValue(ASTFunction& func)

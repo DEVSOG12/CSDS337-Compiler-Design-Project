@@ -24,6 +24,7 @@ public:
     // Virtual functions. See base class for details.
     std::unique_ptr<VarType> ReturnType(ASTFunction& func) override;
     bool IsLValue(ASTFunction& func) override;
+    bool GetValue();
     llvm::Value* Compile(llvm::IRBuilder<>& builder, ASTFunction& func) override;
     std::string ToString(const std::string& prefix) override;
 };

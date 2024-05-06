@@ -43,6 +43,11 @@ ASTFunction* AST::AddFunction(const std::string& name, std::unique_ptr<VarType> 
 {
 
     // Add to our function list.
+    printf("INFO: Adding function %s.\n", name.c_str());
+    for (auto& param : parameters)
+    {
+        printf("INFO: Adding parameter %s.\n", std::get<1>(param).c_str());
+    }
     auto func = std::make_unique<ASTFunction>(*this, name, std::move(returnType), std::move(parameters), variadic);
     functionList.push_back(name);
     functions[name] = std::move(func);
@@ -63,11 +68,43 @@ ASTFunction* AST::GetFunction(const std::string& name)
 void AST::Compile()
 {
 
-    // All we need to do is compile each function.
+    // rearrange the order of items in the functionList s.t. the printf is first.
+    std::vector<std::string> newFunctionList;
     for (auto& func : functionList)
     {
+        if (func == "printf")
+        {
+            newFunctionList.push_back(func);
+            break;
+        }
+    }
+    for (auto& func : functionList)
+    {
+        if (func != "printf")
+        {   
+            newFunctionList.push_back(func);
+        }
+    }
+    
+    // All we need to do is compile each function.
+    for (auto& func : newFunctionList)
+    {
         std::cout << "INFO: Compiling function " + func + "." << std::endl;
-        functions[func]->Compile(module, builder);
+        try {
+            static_assert(std::is_base_of<ASTFunction, ASTFunction>::value, "ASTFunction must be a base of ASTFunction");
+            static_assert(std::is_base_of<llvm::IRBuilder<>, llvm::IRBuilder<>>::value, "IRBuilder must be a base of IRBuilder");
+            static_assert(std::is_base_of<llvm::Module, llvm::Module>::value, "Module must be a base of     Module");
+            functions[func]->Compile(module, builder);
+            // print type of func. 
+            std::cout << "Type of func: " << typeid(func).name() << std::endl;
+        }
+        catch (std::exception& e)
+        {
+            std::cerr << "ERROR: Failed to compile function " + func + "!" << std::endl;
+            throw e;
+        }
+        
+        // functions[func]->Compile(module, builder);
     }
     compiled = true;
 

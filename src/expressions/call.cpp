@@ -37,8 +37,11 @@ llvm::Value* ASTExpressionCall::Compile(llvm::IRBuilder<>& builder, ASTFunction&
     int maxParameters = funcType->varArgs ? INT_MAX : minParameters; // We can either pass in the minimum number of arguments or infinitely many.
     if (arguments.size() < minParameters || arguments.size() > maxParameters)
         throw std::runtime_error("ERROR: Invalid number of arguments in function call! Expected " + std::to_string(minParameters) + " to " + std::to_string(maxParameters) + " arguments, but got " + std::to_string(arguments.size()) + "!");
+
+    printf("Calling function with %zu arguments\n", arguments.size());
     for (int i = 0; i < minParameters; i++) // We only need to check the non-variadic parameters.
     {
+        printf("Checking argument %d\n", i);
         auto argReturnType = arguments[i]->ReturnType(func);
         if (!funcType->parameterTypes[i]->Equals(argReturnType.get())) // The value types are not equal, try seeing if it's a float we need to cast an int to.
         {
@@ -66,8 +69,10 @@ llvm::Value* ASTExpressionCall::Compile(llvm::IRBuilder<>& builder, ASTFunction&
 std::string ASTExpressionCall::ToString(const std::string& prefix)
 {
     std::string output = callee->ToString("");
-    for (int i = 0; i < arguments.size() - 1; i++)
-        output += prefix + "├──" + (arguments[i] == nullptr ? "nullptr\n" : arguments[i]->ToString(prefix + "│  "));
-    output += prefix + "└──" + (arguments.back() == nullptr ? "nullptr\n" : arguments.back()->ToString(prefix + "   "));
+    if (!arguments.empty()) {
+        for (size_t i = 0; i < arguments.size() - 1; i++)
+            output += prefix + "├──" + (arguments[i] == nullptr ? "nullptr\n" : arguments[i]->ToString(prefix + "│  "));
+        output += prefix + "└──" + (arguments.back() == nullptr ? "nullptr\n" : arguments.back()->ToString(prefix + "   "));
+    }
     return output;
 }

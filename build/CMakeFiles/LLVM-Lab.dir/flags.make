@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/mnt/c/Users/killc/OneDrive/Desktop/PG4-1/PG4/src
+CXX_INCLUDES = -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src -I/opt/homebrew/opt/llvm@17/include -I/Users/devsog12/Projects/CSDS337-Compiler-Design-Project/src/files
 
 CXX_FLAGS = 
 

@@ -18,6 +18,10 @@ llvm::Value* ASTExpressionBool::Compile(llvm::IRBuilder<>& builder, ASTFunction&
 
 std::string ASTExpressionBool::ToString(const std::string& prefix)
 {
-    // Convert the boolean value to string.
-    return std::to_string(value) + "\n";
+    return value ? "true" : "false";
+}
+
+bool ASTExpressionBool::GetValue()
+{
+    return value;
 }

@@ -1,0 +1,33 @@
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/devsog12/Projects/CSDS337-Compiler-Design-Project/build
+[100%] Built target LLVM-Lab
+Running -i tests/if.py -fAsm -o tests/if.ll
+error: syntax error, unexpected INDENT, expecting end of file
+INFO: Adding function main.
+No statements
+Found newline --- 
+Found pushing indent from 1
+Indent size: 4
+No statements
+Print statement
+Value: 1
+
+INFO: Adding function printf.
+INFO: Adding parameter str.
+Found newline --- 
+Found Statement
+Found popping dedent from 2
+Found newline --- 
+No else statement
+If statement
+Expression: (==)
+├──1
+└──1
+
+Found Statement
+Found Statement
+Found pushing indent from 1
+Indent size: 4
+INFO: Defining function main.
+Irrecoverable error state, aborting

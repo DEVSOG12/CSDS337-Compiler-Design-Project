@@ -59,14 +59,15 @@ The addition expression is added, but not subtraction. Shouldn't be too differen
 ### Part 2 - Headless
 We have code for converting booleans to integers, but the header file is missing. Could you make one for it? Make sure to make a static `Create` method for it like the other expressions have.
 
-### Part 3 - Comparisons
-Some types of comparisons seem to be missing from comparison expression. The header file has a list of all of them. Remember, are the integers we're dealing with signed or unsigned?
+## 🚨 Attention
+It would only work on LLVM@17 or ealier. As the LLVM@18 removed IRBuilderBase::getInt8PtrTy [here](https://github.com/llvm/llvm-project/pull/74096). 
+
 
 ### Part 4 - Int 2 Bool
 In C, when we have an integer expression we can use it as a boolean value (Ex: `if (num)`). How do we know whether or not the number results in true or false?
 
-### Part 5 - Multiplication, Division, and Negation
-You've been able to (hopefully) add subtraction operations. Now, you'll have to come up with both the header and source files. Make sure the headers are `multiplication.h`, `division.h`, and `negative.h`. The classes should also be called `ASTExpressionMultiplication`, `ASTExpressionDivision`, and `ASTExpressionNegation`. If these are not named properly, things may not work. Make sure to have the static `Create` function.
+
+Our group will be modifying the compiler we have been working with to support a subset of the python language. To accomplish this we will be modifying the existing language, as well as implementing changes to the AST to support some more niche features of Python that are not supported in C.
 
 ### Part 6 - Booligan
 We need code to generate constant boolean expressions! There is code for `int` and `float`. Remember from the last assignment how booleans are represented in LLVM?
@@ -86,29 +87,14 @@ if (x && y) doThing();
 Note that one property of the && operator is that if x is false, we don't calculate what y is to save resources.
 But this involves jumping as well, so we must have a layout such as this:
 
-```cpp
-bool tmp = x;
-if (tmp) tmp = y;
-if (tmp) doThing();
-```
+So far, we have arrived at the Python general grammar. After reading through it, we have created a subsection of the grammar that only relates to the functionalities that we plan on implementing in our compiler. Our next step is to start implementing our grammar. We referenced the [Official Python](https://docs.python.org/3/reference/grammar.html) site to design our new grammar. We have written the lexer and parser. 
 
-It looks different yes, but try and convince yourself that it does the same exact thing as the code above.
-* If x is false, then tmp is false, so we never calculate what y is and don't call the function.
-* If x is true and y is false, then we still don't call the function.
-* If x is true and y is true, then we finally do call the function.
+## Future Works
+- Finish up function decerations
+- Fix Else statement token issue.
 
-This makes the control flow:
-
-```cpp
-entry:
-    bool tmp = x;
-    if (tmp) goto checkRight else goto cont;
-checkRight:
-    tmp = y;
-    goto cont;
-cont:
-    // Check tmp here and use it for calling function.
-```
+## Run Instructions
+- Refer to Readme within `src` folder. 
 
 So if we are ignoring the function call we do, `tmp` ends up representing the result of `x && y`. We know that if we don't need to check the right side, we have a false value. We also know that the final result depends on the right side. If we can't use stack memory, how do we get the result? There are 2 ways to do this, and one is much easier than the other :>
 

@@ -15,6 +15,7 @@ bool ASTExpressionVariable::IsLValue(ASTFunction& func)
     // Otherwise, we know that the variable is really just a pointer to some memory allocated somewhere and is thus an L-Value.
 }
 
+
 llvm::Value* ASTExpressionVariable::Compile(llvm::IRBuilder<>& builder, ASTFunction& func)
 {
     return func.GetVariableValue(var); // Simply just return the value from the scope table.

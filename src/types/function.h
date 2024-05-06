@@ -7,7 +7,7 @@ class VarTypeFunction : public VarType
 {
 private:
 
-    // Prefetched LLVM type.
+// Prefetched LLVM type.
     llvm::Type* funcType = nullptr;
 
 public:

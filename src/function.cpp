@@ -84,6 +84,7 @@ void ASTFunction::SetVariableValue(const std::string& name, llvm::Value* value)
 
 void ASTFunction::Define(std::unique_ptr<ASTStatement> definition)
 {
+    printf("INFO: Defining function %s.\n", name.c_str());
     if (!this->definition) // Define only if not already defined.
     {
         this->definition = std::move(definition);
@@ -93,13 +94,14 @@ void ASTFunction::Define(std::unique_ptr<ASTStatement> definition)
 
 void ASTFunction::Compile(llvm::Module& mod, llvm::IRBuilder<>& builder)
 {
-
+    printf("INFO: Compiling function %s.\n", name.c_str());
     // First, add a new function declaration to our scope.
     auto func = llvm::Function::Create((llvm::FunctionType*)funcType->GetLLVMType(builder.getContext()), llvm::GlobalValue::LinkageTypes::ExternalLinkage, name, mod);
     ast.scopeTable.SetVariableValue(name, func);
 
     // Set parameter names.
     unsigned idx = 0;
+    printf("INFO: Setting parameter names for function %s.\n", name.c_str());
     for (auto& arg : func->args()) arg.setName(parameters[idx++]);
 
     // Only continue if the function has a definition.
@@ -122,6 +124,7 @@ void ASTFunction::Compile(llvm::Module& mod, llvm::IRBuilder<>& builder)
     */
     for (auto& stackVar : stackVariables)
     {
+        printf("INFO: Allocating stack variable %s.\n", stackVar.c_str());
         scopeTable.SetVariableValue(
             stackVar,
             builder.CreateAlloca(scopeTable.GetVariableType(stackVar)->GetLLVMType(builder.getContext()), nullptr, stackVar)
@@ -163,4 +166,15 @@ std::string ASTFunction::ToString(const std::string& prefix)
     std::string output = name + "\n";
     output += prefix + "└──" + (definition == nullptr ? "nullptr\n" : definition->ToString(prefix + "   "));
     return output;
+}
+
+bool ASTFunction::getLLVMValue(llvm::Value* val)
+{
+    llvm::ConstantInt *CI = llvm::dyn_cast<llvm::ConstantInt>(val);
+    if (CI)
+    {
+        return CI->getZExtValue();
+    }
+    return false;
+    
 }
